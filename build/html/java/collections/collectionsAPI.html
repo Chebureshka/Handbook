@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Collections &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Arrays" href="arraysAPI.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="collections.html">Java Collections</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interfaces.html">Иерархия интерфейсов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="implementations.html">Стандартные реализации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arraysAPI.html">Arrays</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Collections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Создание специальных коллекций</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Декарирование коллекций</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html#links">Links</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collections.html">Java Collections</a> &raquo;</li>
+        
+      <li>Collections</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/java/collections/collectionsAPI.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collections">
+<h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>sort</dt><dd><p>Делегирует вызов интерфейсу List, и далее массиву (при реализации по умолчанию)</p>
+</dd>
+<dt>reverse / rotate</dt><dd><p>Переставляет элементы в переданном List</p>
+</dd>
+<dt>binarySearch</dt><dd><p>Поиск элемента</p>
+</dd>
+<dt>shuffle</dt><dd><p>случайное пересталвение всех лементов</p>
+</dd>
+<dt>swap</dt><dd><p>перестановка двух элементов</p>
+</dd>
+<dt>copy</dt><dd><p>копирует элементы из одного List в другой List</p>
+</dd>
+<dt>min/max</dt><dd><p>характерная свертка</p>
+</dd>
+<dt>replaceAll</dt><dd><p>заменить все вхождения переданного элемента</p>
+</dd>
+<dt>indexOfSubList</dt><dd><p>индекс из первого массива, начиная с которого полностью повторяется второй</p>
+</dd>
+<dt>disjoint</dt><dd><p>Истина, если нет общих элементов в коллекции</p>
+</dd>
+<dt>addAll</dt><dd><p>добавить указанные элементы в коллекцию</p>
+</dd>
+<dt>reverseOrder</dt><dd><p>Компоратор, сравнивающий Comparable элементы, в иным результатом</p>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h2>Создание специальных коллекций<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>singleton</dt><dd><p>Возвращает иммутабельное множество с единственным элементом (SingletonSet)</p>
+</dd>
+<dt>singletonList / singletonMap</dt><dd><p>Возвращает иммутабельную коллекцию с единственным элементом</p>
+</dd>
+<dt>nCopies</dt><dd><p>Возвращает иммутабельный List из указанного количества переданных элементов</p>
+</dd>
+<dt>emptyIterator / emptyListIterator</dt><dd><p>Возвращает синглтон пустого итератора</p>
+</dd>
+<dt>emptySet / emptySortedSet / emptyNavigableSet / emptyList / emptyMap / emptySortedMap / emptyNavigableMap</dt><dd><p>Возвращает синглтон пустой коллекции</p>
+</dd>
+</dl>
+<div class="section" id="id2">
+<h3>Декарирование коллекций<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>unmodifiableCollection / unmodifiableSet / unmodifiableSortedSet / unmodifiableNavigableSet / unmodifiableList / unmodifiableMap / unmodifiableSortedMap / unmodifiableNavigableMap</dt><dd><p>Декарирует коллекцию, как неизменяемою</p>
+</dd>
+<dt>synchronizedCollection / synchronizedSet / synchronizedSortedSet / synchronizedNavigableSet / synchronizedList / synchronizedMap / synchronizedSortedMap / synchronizedNavigableMap</dt><dd><p>Декарирует коллекцию, как синхронизированную</p>
+</dd>
+<dt>checkedCollection / checkedQueue / checkedSet / checkedNavigableSet / checkedList / checkedMap / checkedSortedMap / checkedNavigableMap</dt><dd><p>Декарирует переданную коллекцию, как коллекцию, в которую можно добавлять элементы строго определенного типа</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="arraysAPI.html" class="btn btn-neutral float-left" title="Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka ❤️
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
