@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Реализации неизменяемых коллекций &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Реализации неизменяемых коллекций" href="mutable.html" />
+    <link rel="prev" title="Scala Collections" href="collections.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../java/collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/gc/gc.html">GC</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collections.html">Scala Collections</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Реализации неизменяемых коллекций</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#seq">Seq</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vector">Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrayseq">ArraySeq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numericrange">NumericRange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string">String</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#range">Range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lazylist">LazyList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#queue">Queue</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#map">Map</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hashmap">HashMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#treemap">TreeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listmap">ListMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vectormap">VectorMap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#set">Set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hashset">HashSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listset">ListSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#treeset">TreeSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitset">BitSet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mutable.html">Реализации неизменяемых коллекций</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallel.html">Реализации неизменяемых коллекций</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html#links">Links</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collections.html">Scala Collections</a> &raquo;</li>
+        
+      <li>Реализации неизменяемых коллекций</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scala/collections/immutable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Реализации неизменяемых коллекций<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://docs.scala-lang.org/ru/overviews/collections-2.13/concrete-immutable-collection-classes.html">scala.collection.immutable</a></p>
+<div class="figure align-default">
+<img alt="../../_images/photo_2020-06-01_01-17-53.jpg" src="../../_images/photo_2020-06-01_01-17-53.jpg" />
+</div>
+<div class="section" id="seq">
+<h2>Seq<a class="headerlink" href="#seq" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vector">
+<h3>Vector<a class="headerlink" href="#vector" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от IndexedSeq</p>
+<p>Вектора обладают хорошим балансом между быстрой случайной выборкой и быстрым случайным обновлением элементов, они используются в качестве реализации неизменяемых индексированных последовательностей.</p>
+<p>Вектора представленны деревьями с высоким уровнем ветвления. Каждый узел дерева содержит до 32х элементов вектора или содержит до 32х других узлов.
+Вектора с размером до 32х элементов могут быть представленны одним узлом. Вектора 32 * 32 = 1024 элементы могут быть представлены одним витком. Для векторов с 2^15 элементами достаточно двух переходов от
+корня дерева до конечного элемента узла и пяти переходов для 2^30 элементами. Таким образом, для всех векторов разумных размеров выбор элемента включает до 5 простых выборок массивов.</p>
+<p>Также как и доступ к элементу, операция обновления в векторах занимает “практически” постоянное время.
+Добавление элемента в середину вектора может быть выполнено через копирование узла содержащего этот элемент и каждого ссылающегося на него узла, начиная от корня дерева.
+Это означает, что процесс обновления элемента создает от одного до пяти узлов, каждый из которых содержит до 32 элементов или поддеревьев.
+Это, конечно, дороже, чем просто обновление элемента в изменяемом массиве, но все же намного дешевле, чем копирование вообще всего вектора.</p>
+</div>
+<div class="section" id="arrayseq">
+<h3>ArraySeq<a class="headerlink" href="#arrayseq" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от IndexedSeq</p>
+<p>ArraySeqs хранят свои элементы в приватном Массиве. Таким образом достигается компактное представление и обеспечивается быстрый индексированный доступ к элементам,
+но обновление или добавление одного элемента занимает линейное время, так как требует создания другого массива и копирования всех элементов исходного массива.</p>
+</div>
+<div class="section" id="numericrange">
+<h3>NumericRange<a class="headerlink" href="#numericrange" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от IndexedSeq</p>
+<p>Generic версия Range</p>
+</div>
+<div class="section" id="string">
+<h3>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от IndexedSeq</p>
+<p>Как и массивы, строки не являются непосредственно последовательностями, но могут быть преобразованы в них, а также поддерживают все операции которые есть у последовательностей.</p>
+</div>
+<div class="section" id="range">
+<h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от IndexedSeq</p>
+<p>Диапазон представляет собой упорядоченную последовательность целых чисел, которые отделены друг от друга одинаковыми размерами.
+Диапазоны занимают константный размер, потому что они могут быть определены только тремя цифрами: их началом, концом и значением шага.</p>
+</div>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от LinearSeq</p>
+<p>List представляет из себя конечную неизменяемую последовательность. Он обеспечивает быстрый (за постоянное время) доступ как к первому элементу, так и к остальному списку,
+а также быструю операцию добавления нового элемента в начало списка. Большинство оставшихся операции занимают линейное время исполнения.</p>
+</div>
+<div class="section" id="lazylist">
+<h3>LazyList<a class="headerlink" href="#lazylist" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от LinearSeq</p>
+<p>LazyList похож на список, за исключением того, что его элементы вычисляются лениво. Поэтому ленивый список может быть бесконечно длинным.
+Обрабатываются только те элементы, которые запрашиваются. В остальном, у ленивых списков те же параметры производительности, что и обычных.</p>
+</div>
+<div class="section" id="queue">
+<h3>Queue<a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от LinearSeq</p>
+<p>Queue is implemented as a pair of Lists, one containing the in elements and the other the out elements. Elements are added to the in list and removed from the out list.
+When the out list runs dry, the queue is pivoted by replacing the out list by in.reverse, and in by Nil.</p>
+<p>Adding items to the queue always has cost O(1). Removing items has cost O(1), except in the case where a pivot is required, in which case, a cost of O(n) is incurred, where n is the number of elements in the queue.
+When this happens, n remove operations with O(1) cost are guaranteed. Removing an item is on average O(1).</p>
+</div>
+</div>
+<div class="section" id="map">
+<h2>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hashmap">
+<h3>HashMap<a class="headerlink" href="#hashmap" title="Permalink to this headline">¶</a></h3>
+<p>Хэш деревья - это стандартный способ эффективного создания неизменяемых множеств и ассоциативных массивов (мап).</p>
+<p><strong>Compressed Hash-Array Mapped Prefix-trees</strong> - это специальные хэш деревья для JVM, которые улучшают локальность и обеспечивают компактную и элегантную реализацию деревьев.
+Их представление очень похоже на реализацию векторов, которые также являются деревьями, где каждый узел имеет либо 32 элемента либо 32 поддерева. Но в данном случае ключ выбирается на основе хэш-кода.
+Например, чтобы найти ключ на мапе, сначала берут хэш-код ключа. Затем самые младшие 5 бит хэш-кода используются для выбора первого поддерева, за которым следуют следующие 5 бит и так далее.
+Выбор прекращается, когда для всех битов будут найдены ключи.</p>
+</div>
+<div class="section" id="treemap">
+<h3>TreeMap<a class="headerlink" href="#treemap" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от SortedMap</p>
+<p>Красно-черные деревья представляют собой разновидность сбалансированного двоичного дерева, где одни узлы помечаются как “красные”, а другие - как “черные”.
+Как и любое сбалансированное двоичное дерево, операции над ним занимают по времени логарифм от количества элементов дерева.</p>
+</div>
+<div class="section" id="listmap">
+<h3>ListMap<a class="headerlink" href="#listmap" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от SeqMap</p>
+<p>ListMap представляет собой мапу в виде связанного списка пар ключ-значение. В общем, операции на связанной мапе могут потребовать обхода по всему связанному списку.
+Таким образом, время выполнении обхода на связанной мапе линейно зависит от размера мапы.</p>
+</div>
+<div class="section" id="vectormap">
+<h3>VectorMap<a class="headerlink" href="#vectormap" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от SeqMap</p>
+<p>VectorMap представляет собой мапу, использующую и Vector ключей и HashMap. У него есть итератор, который возвращает все записи в порядке их вставки.</p>
+</div>
+</div>
+<div class="section" id="set">
+<h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hashset">
+<h3>HashSet<a class="headerlink" href="#hashset" title="Permalink to this headline">¶</a></h3>
+<p>Базируется на Compressed Hash-Array Mapped Prefix-trees (реализация схожа с HashMap)</p>
+</div>
+<div class="section" id="listset">
+<h3>ListSet<a class="headerlink" href="#listset" title="Permalink to this headline">¶</a></h3>
+<p>Так же как и ListMap использует связанный список элементов, а следовательно требует линейное время для вставки элементов.</p>
+</div>
+<div class="section" id="treeset">
+<h3>TreeSet<a class="headerlink" href="#treeset" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от SortedSet</p>
+<p>Базируется на красно-черном дереве (реализация схожа с TreeMap)</p>
+</div>
+<div class="section" id="bitset">
+<h3>BitSet<a class="headerlink" href="#bitset" title="Permalink to this headline">¶</a></h3>
+<p>Наследуется от SortedSet</p>
+<p>BitSet представляет собой набор маленьких целых чисел в виде набора битов большего целого числа.
+Например, набор битов, содержащий 3, 2 и 0, будет представлен как целое число 1101 в двоичном виде, т.е. 13 в десятичном.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mutable.html" class="btn btn-neutral float-right" title="Реализации неизменяемых коллекций" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collections.html" class="btn btn-neutral float-left" title="Scala Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

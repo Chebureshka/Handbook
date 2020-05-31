@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Реализации неизменяемых коллекций &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Реализации неизменяемых коллекций" href="mutable.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../java/collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/gc/gc.html">GC</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="collections.html">Scala Collections</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="immutable.html">Реализации неизменяемых коллекций</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutable.html">Реализации неизменяемых коллекций</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Реализации неизменяемых коллекций</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#splitter-spliterator">Splitter (Аналог Spliterator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combiner">Combiner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Реализации</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pararray">ParArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parvector">ParVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mutable-parhashmap">mutable.ParHashMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mutable-parhashset">mutable.ParHashSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#immutable-parhashmap">immutable.ParHashMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#immutable-parhashset">immutable.ParHashSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parrange">ParRange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#partriemap">ParTrieMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html#links">Links</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="collections.html">Scala Collections</a> &raquo;</li>
+        
+      <li>Реализации неизменяемых коллекций</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scala/collections/parallel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Реализации неизменяемых коллекций<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://docs.scala-lang.org/ru/overviews/parallel-collections/overview.html">scala.collection.parallel</a></p>
+<p>Параллельная библиотека избегает повторений кода путем реализации большинства операций посредством собственных “шаблонов”,
+которые достаточно объявить один раз, а потом наследовать в различных реализациях параллельных коллекций.</p>
+<p>Упомянутые выше “шаблонные” трейты реализуют большинство параллельных операций в терминах двух ключевых абстракций – разделителей (Splitter) и компоновщиков (Combiner).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<dl>
+<dt>CollectionConverters.</dt><dd><p>_.par - Преобразование последовательной коллекции в паралельную</p>
+<p>_.seq - Преобразование кололекции в последовательную версию</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="splitter-spliterator">
+<h2>Splitter (Аналог Spliterator)<a class="headerlink" href="#splitter-spliterator" title="Permalink to this headline">¶</a></h2>
+<p>Задача разделителя (trait Splitter[T] extends Iterator[T]), как и предполагает имя, заключается в том, чтобы разбить параллельную коллекцию на непустые разделы.
+А основная идея – в том, чтобы разбивать коллекцию на более мелкие части, пока их размер не станет подходящим для последовательной обработки.</p>
+<p>Уникальность этого “разделяющего итератора” в том, что его метод split разбивает текущий объект this на другие разделители Splitter,
+каждый из которых перебирает свой, отделенный набор элементов когда-то целой параллельной коллекции.
+И так же, как любой нормальный Iterator, Splitter становится недействительным после того, как вызван его метод split.</p>
+<p>В случаях, когда требуются разделы произвольного размера, особенно в параллельных последовательностях, используется PreciseSplitter,
+который является наследником Splitter и дополнительно реализует точный метод разделения, psplit.</p>
+</div>
+<div class="section" id="combiner">
+<h2>Combiner<a class="headerlink" href="#combiner" title="Permalink to this headline">¶</a></h2>
+<p>Компоновщик Combiner можно представить себе как обобщенный Builder из библиотеки последовательных коллекций Scala.
+У каждой параллельной коллекции есть свой отдельный Combiner, так же, как у каждой последовательной есть свой Builder.</p>
+<p>Если в случае с последовательными коллекциями элементы можно добавлять в Builder, а потом получить коллекцию, вызвав метод result, то при работе с параллельными требуется вызвать у компоновщика метод combine,
+который берет аргументом другой компоновщик и делает новый Combiner. Результатом будет компоновщик, содержащий объединенный набор. После вызова метода combine оба компоновщика становятся недействительными.</p>
+</div>
+<div class="section" id="id2">
+<h2>Реализации<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pararray">
+<h3>ParArray<a class="headerlink" href="#pararray" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="parvector">
+<h3>ParVector<a class="headerlink" href="#parvector" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="mutable-parhashmap">
+<h3>mutable.ParHashMap<a class="headerlink" href="#mutable-parhashmap" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="mutable-parhashset">
+<h3>mutable.ParHashSet<a class="headerlink" href="#mutable-parhashset" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="immutable-parhashmap">
+<h3>immutable.ParHashMap<a class="headerlink" href="#immutable-parhashmap" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="immutable-parhashset">
+<h3>immutable.ParHashSet<a class="headerlink" href="#immutable-parhashset" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id8">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="parrange">
+<h3>ParRange<a class="headerlink" href="#parrange" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id9">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+<div class="section" id="partriemap">
+<h3>ParTrieMap<a class="headerlink" href="#partriemap" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id10">
+<p class="admonition-title">Todo</p>
+<p>Todo</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="mutable.html" class="btn btn-neutral float-left" title="Реализации неизменяемых коллекций" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

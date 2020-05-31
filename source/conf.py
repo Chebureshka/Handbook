@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Handbook'
-copyright = '2020, Chebureshka ❤️🥟🥟'
+copyright = '2020, Chebureshka 🥟❤️🥟'
 author = 'Chebureshka'
 
 # The full version, including alpha/beta/rc tags
@@ -35,7 +35,10 @@ release = '2.0'
 extensions = [ 
 "sphinx_rtd_theme",
 "sphinx.ext.autodoc",
+'sphinx.ext.todo',
 ]
+
+todo_include_todos=True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

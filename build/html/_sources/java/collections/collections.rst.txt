@@ -19,7 +19,7 @@ Java Collection Framework — иерархия интерфейсов и их р
 
 
 Links
------
+**********
 
 https://habr.com/ru/post/237043/
 
