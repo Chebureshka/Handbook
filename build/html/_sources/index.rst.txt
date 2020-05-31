@@ -5,3 +5,5 @@
    :caption: Java
 
    java/collections/collections.rst
+   java/jit/jit.rst
+   java/gc/gc.rst

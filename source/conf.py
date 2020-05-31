@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Handbook'
-copyright = '2020, Chebureshka ❤️'
+copyright = '2020, Chebureshka ❤️🥟🥟'
 author = 'Chebureshka'
 
 # The full version, including alpha/beta/rc tags

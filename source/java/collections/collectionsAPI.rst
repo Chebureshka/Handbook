@@ -1,6 +1,5 @@
 .. include:: ../../defs.rst
 
-********************************
 Collections 
 ********************************
 
@@ -42,7 +41,7 @@ reverseOrder
 
 
 Создание специальных коллекций
-******************************
+==============================
 
 singleton 
     Возвращает иммутабельное множество с единственным элементом (SingletonSet)
@@ -63,7 +62,7 @@ emptySet / emptySortedSet / emptyNavigableSet / emptyList / emptyMap / emptySort
 
 
 Декарирование коллекций
-=======================
+-----------------------
 
 unmodifiableCollection / unmodifiableSet / unmodifiableSortedSet / unmodifiableNavigableSet / unmodifiableList / unmodifiableMap / unmodifiableSortedMap / unmodifiableNavigableMap
 	Декарирует коллекцию, как неизменяемою
