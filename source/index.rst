@@ -14,6 +14,7 @@
    java/build/build.rst
    java/web/web.rst
    java/specific/specific.rst
+   frameworks/tests/tests.rst
 
 .. toctree::
    :maxdepth: 1
