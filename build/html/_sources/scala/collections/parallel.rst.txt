@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-Реализации неизменяемых коллекций
+Паралельные коллекции
 ************************************
 
 `scala.collection.parallel <https://docs.scala-lang.org/ru/overviews/parallel-collections/overview.html>`_

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scala Collections &mdash; Handbook 2.0 documentation</title>
+  <title>I/O &mdash; Handbook 2.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Реализации неизменяемых коллекций" href="immutable.html" />
-    <link rel="prev" title="Collections" href="../../java/collections/collectionsAPI.html" /> 
+    <link rel="next" title="Serialization" href="serialization.html" />
+    <link rel="prev" title="Паралельные коллекции" href="../../scala/collections/parallel.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,17 +79,17 @@
             
               <p class="caption"><span class="caption-text">Java</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../java/jit/jit.html">JIT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../java/gc/gc.html">GC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../java/collections/collections.html">Java Collections</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scala Collections</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="immutable.html">Реализации неизменяемых коллекций</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html">Реализации изменяемых коллекций</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parallel.html">Паралельные коллекции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">I/O</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html">java.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.nio.html">java.nio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../java/io/io.html">I/O</a></li>
 </ul>
 
             
@@ -135,13 +135,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Scala Collections</li>
+      <li>I/O</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/scala/collections/collections.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/java/io/io.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,38 +154,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scala-collections">
-<h1>Scala Collections<a class="headerlink" href="#scala-collections" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default">
-<img alt="../../_images/photo_2020-06-01_01-17-33.jpg" src="../../_images/photo_2020-06-01_01-17-33.jpg" />
-</div>
+  <div class="section" id="i-o">
+<h1>I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Содержание</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="immutable.html">Реализации неизменяемых коллекций</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="immutable.html#seq">Seq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="immutable.html#map">Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="immutable.html#set">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#serializable">Serializable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#externalizable">Externalizable</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mutable.html">Реализации изменяемых коллекций</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html#seq">Seq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html#priorityqueue">PriorityQueue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html#map">Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html#set">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="java.io.html">java.io</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#inputstream">InputStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#outputstream">OutputStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#reader">Reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#writer">Writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#file">File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.io.html#randomaccessfile">RandomAccessFile</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="parallel.html">Паралельные коллекции</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="parallel.html#splitter-spliterator">Splitter (Аналог Spliterator)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parallel.html#combiner">Combiner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parallel.html#id2">Реализации</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="java.nio.html">java.nio</a></li>
 </ul>
 </div>
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://docs.scala-lang.org/overviews/collections-2.13/introduction.html">https://docs.scala-lang.org/overviews/collections-2.13/introduction.html</a></p>
 </div>
 </div>
 
@@ -197,10 +189,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="immutable.html" class="btn btn-neutral float-right" title="Реализации неизменяемых коллекций" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="serialization.html" class="btn btn-neutral float-right" title="Serialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../java/collections/collectionsAPI.html" class="btn btn-neutral float-left" title="Collections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../scala/collections/parallel.html" class="btn btn-neutral float-left" title="Паралельные коллекции" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

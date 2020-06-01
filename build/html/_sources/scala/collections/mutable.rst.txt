@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-Реализации неизменяемых коллекций
+Реализации изменяемых коллекций
 ************************************
 
 `scala.collection.mutable <https://docs.scala-lang.org/ru/overviews/collections-2.13/concrete-mutable-collection-classes.html>`_

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Реализации неизменяемых коллекций &mdash; Handbook 2.0 documentation</title>
+  <title>Паралельные коллекции &mdash; Handbook 2.0 documentation</title>
   
 
   
@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Реализации неизменяемых коллекций" href="mutable.html" /> 
+    <link rel="next" title="I/O" href="../../java/io/io.html" />
+    <link rel="prev" title="Реализации изменяемых коллекций" href="mutable.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -78,13 +79,13 @@
             
               <p class="caption"><span class="caption-text">Java</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../java/collections/collections.html">Java Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../java/jit/jit.html">JIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../java/gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/collections/collections.html">Java Collections</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="collections.html">Scala Collections</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="immutable.html">Реализации неизменяемых коллекций</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mutable.html">Реализации неизменяемых коллекций</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Реализации неизменяемых коллекций</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mutable.html">Реализации изменяемых коллекций</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Паралельные коллекции</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#splitter-spliterator">Splitter (Аналог Spliterator)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#combiner">Combiner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Реализации</a><ul>
@@ -103,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="collections.html#links">Links</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/io/io.html">I/O</a></li>
 </ul>
 
             
@@ -150,7 +152,7 @@
         
           <li><a href="collections.html">Scala Collections</a> &raquo;</li>
         
-      <li>Реализации неизменяемых коллекций</li>
+      <li>Паралельные коллекции</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,7 +172,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>Реализации неизменяемых коллекций<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>Паралельные коллекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://docs.scala-lang.org/ru/overviews/parallel-collections/overview.html">scala.collection.parallel</a></p>
 <p>Параллельная библиотека избегает повторений кода путем реализации большинства операций посредством собственных “шаблонов”,
 которые достаточно объявить один раз, а потом наследовать в различных реализациях параллельных коллекций.</p>
@@ -269,8 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../../java/io/io.html" class="btn btn-neutral float-right" title="I/O" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="mutable.html" class="btn btn-neutral float-left" title="Реализации неизменяемых коллекций" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="mutable.html" class="btn btn-neutral float-left" title="Реализации изменяемых коллекций" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
