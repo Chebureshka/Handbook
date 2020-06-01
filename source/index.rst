@@ -12,6 +12,8 @@
    scala/collections/collections.rst
    java/io/io.rst
    java/build/build.rst
+   kotlin/coroutines/coroutines.rst
+   frameworks/logging/logging.rst
    java/web/web.rst
    java/specific/specific.rst
    frameworks/tests/tests.rst
@@ -20,4 +22,4 @@
    :maxdepth: 1
    :caption: Java Frameworks
 
-   frameworks/logging/logging.rst
+   
