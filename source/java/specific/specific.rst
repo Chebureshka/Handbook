@@ -8,7 +8,4 @@ Java Specific
    :caption: Содержание
 
    proxy.rst
-
-
-Links
-*******
+   classloader.rst
