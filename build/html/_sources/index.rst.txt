@@ -12,6 +12,7 @@
    scala/collections/collections.rst
    java/io/io.rst
    java/build/build.rst
+   java/web/web.rst
    java/specific/specific.rst
 
 .. toctree::
