@@ -5,7 +5,7 @@ JDBC
 JDBC (англ. Java DataBase Connectivity — соединение с базами данных на Java) — платформенно независимый промышленный стандарт взаимодействия Java-приложений с различными СУБД, 
 реализованный в виде пакета java.sql, входящего в состав Java SE.
 
-.. code-block::
+.. code-block:: java
 
     Class.forName(driverClass);
     Connection connection = DriverManager
@@ -28,7 +28,7 @@ JDBC (англ. Java DataBase Connectivity — соединение с база�
     statement.close();
     connection.close();
 
-.. code-block::
+.. code-block:: java
     :caption: PreparedStatement
 
     PreparedStatement statement = connection
@@ -36,7 +36,7 @@ JDBC (англ. Java DataBase Connectivity — соединение с база�
 
     // PreparedStatement представляет собой скомпилированную версию SQL-выражения, выполнение которого будет быстрее и эффективнее
 
-.. code-block::
+.. code-block:: java
     :caption: committing
 
     connection.setAutoCommit(false);
