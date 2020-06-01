@@ -10,4 +10,5 @@ Java Specific
    proxy.rst
    classloader.rst
    references.rst
+   logging.rst
    jmx.rst
