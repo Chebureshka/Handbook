@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Proxy &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ClassLoader" href="classloader.html" />
+    <link rel="prev" title="Java Specific Objects" href="specific.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../concurrency/concurrency.html">Java Concurrency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build/build.html">Системы сборки</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="specific.html">Java Specific Objects</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Proxy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#invocationhandler">InvocationHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classloader.html">ClassLoader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmx.html">JMX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Java Frameworks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../frameworks/logging/logging.html">Логирование</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="specific.html">Java Specific Objects</a> &raquo;</li>
+        
+      <li>Proxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/java/specific/proxy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proxy">
+<h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h1>
+<p>Позволяет сконструировать объект во время исполнения программы (динамически), не создавая для него отдельного класса.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>proxy-объект можно создать только используя интерфейсы.</p>
+</div>
+<div class="section" id="invocationhandler">
+<h2>InvocationHandler<a class="headerlink" href="#invocationhandler" title="Permalink to this headline">¶</a></h2>
+<p>Функциональный интерфейс, предоставляющий метод <code class="docutils literal notranslate"><span class="pre">invoke</span></code>, в который направляются все вызовы, обращенные к proxy-объекту.
+Позволяет перехватывать все вызовы методов, обращенные к proxy-объекту.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">invoke</span><span class="p">(</span><span class="n">Object</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">Method</span> <span class="n">method</span><span class="p">,</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Создание Proxy объекта</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">MyInterface</span> <span class="n">proxyObject</span> <span class="o">=</span> <span class="p">(</span><span class="n">MyInterface</span><span class="p">)</span><span class="n">Proxy</span><span class="p">.</span><span class="na">newProxyInstance</span><span class="p">(</span><span class="k">new</span> <span class="n">CustomInvocationHandler</span><span class="p">());</span>
+    <span class="c1">// Создает объект интерфейса MyInterface, адресующий все вызовы к CustomInvocationHandler.invoke(proxyObject, method, args)</span>
+    <span class="c1">// Для получения имени вызванного метода нужно использовать method.getName()</span>
+    <span class="c1">// method.invoke(original, args) - вызов метода у оригинального объекта</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Более полный способ конструирования прокси объекта</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Proxy</span><span class="p">.</span><span class="na">newProxyInstance</span><span class="p">(</span><span class="n">ClassLoader</span> <span class="n">classLoader</span><span class="p">,</span> <span class="n">Class</span><span class="o">&lt;?&gt;[]</span> <span class="n">interfaces</span><span class="p">,</span> <span class="n">InvocationHandler</span> <span class="n">invocationHandler</span><span class="p">);</span>
+    <span class="c1">// classLoader - the class loader to define the proxy class</span>
+    <span class="c1">// interfaces - the list of interfaces for the proxy class to implement</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classloader.html" class="btn btn-neutral float-right" title="ClassLoader" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="specific.html" class="btn btn-neutral float-left" title="Java Specific Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

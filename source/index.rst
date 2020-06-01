@@ -16,3 +16,5 @@
 .. toctree::
    :maxdepth: 1
    :caption: Java Frameworks
+
+   frameworks/logging/logging.rst

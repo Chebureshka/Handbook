@@ -90,11 +90,8 @@ volatile - используется для данных, которые могу
 
    Volatile переменные являются memory барьерами, в отношении любой операции чтения, произошедшей после чтения volaile, и любой операции записи, до записи в volaile переменную.
 
-   .. code-block:: java
-
-        a = 1; volatile = 2; read(volatile); read(a) 
-
-   Гарантируется Program Order: :math:`setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]`
+   ``a = 1; volatile = 2; read(volatile); read(a)`` 
+   Гарантируется Program Order: |br| :math:`setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]`
 
 
 

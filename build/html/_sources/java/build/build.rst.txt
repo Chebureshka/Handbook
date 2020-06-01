@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-Системы сборки
+Build Systems
 ##################
 
 .. toctree::

@@ -111,6 +111,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build/build.html">Системы сборки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../specific/specific.html">Java Specific Objects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Java Frameworks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../frameworks/logging/logging.html">Логирование</a></li>
 </ul>
 
             
@@ -238,10 +244,8 @@
 <li><p>Атомарные операции чтения и записи для long и double (на 32 разрядных процессорах).</p></li>
 <li><p>Переупорядочивание volatile переменных не происходит.</p>
 <p>Volatile переменные являются memory барьерами, в отношении любой операции чтения, произошедшей после чтения volaile, и любой операции записи, до записи в volaile переменную.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">volatile</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">read</span><span class="p">(</span><span class="kd">volatile</span><span class="p">);</span> <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Гарантируется Program Order: <span class="math notranslate nohighlight">\(setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1;</span> <span class="pre">volatile</span> <span class="pre">=</span> <span class="pre">2;</span> <span class="pre">read(volatile);</span> <span class="pre">read(a)</span></code>
+Гарантируется Program Order: <br/> <span class="math notranslate nohighlight">\(setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]\)</span></p>
 </li>
 </ul>
 </div>
