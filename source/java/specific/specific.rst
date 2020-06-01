@@ -4,8 +4,9 @@ Java Specific
 ##################
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Содержание
 
    proxy.rst
    classloader.rst
+   references.rst
