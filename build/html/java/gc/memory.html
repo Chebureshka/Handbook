@@ -25,6 +25,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -79,7 +80,7 @@
             
               <p class="caption"><span class="caption-text">Java</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concurrency/concurrency.html">Java Concurrency</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="gc.html">GC</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Общие сведения</a><ul>
@@ -100,7 +101,9 @@
 <li class="toctree-l2"><a class="reference internal" href="gc.html#links">Links</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
 </ul>
 
             
@@ -232,6 +235,9 @@ NativeStack</p></td>
 </tr>
 </tbody>
 </table>
+<div class="figure align-default">
+<img alt="../../_images/43820188-ba29f744-9b0f-11e8-9583-f42da2d5add8.png" src="../../_images/43820188-ba29f744-9b0f-11e8-9583-f42da2d5add8.png" />
+</div>
 <div class="section" id="young-gen">
 <h3>Young Gen<a class="headerlink" href="#young-gen" title="Permalink to this headline">¶</a></h3>
 <p>По умолчанию младшее поколение занимает одну треть всей кучи</p>
@@ -322,11 +328,11 @@ The method’s bytecodes, The sizes of the operand stack and local variables sec
 <div class="section" id="id4">
 <h2>Терминология<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Максимальная задержка</dt><dd><p>максимальное время, на которое сборщик приостанавливает выполнение программы для выполнения одной сборки. Такие остановки называются stop-the-world (или STW).</p>
+<dt>Максимальная задержка</dt><dd><p>Максимальное время, на которое сборщик приостанавливает выполнение программы для выполнения одной сборки. Такие остановки называются stop-the-world (или STW).</p>
 </dd>
-<dt>Пропускная способность</dt><dd><p>отношение общего времени работы программы к общему времени простоя, вызванного сборкой мусора, на длительном промежутке времени.</p>
+<dt>Пропускная способность</dt><dd><p>Отношение общего времени работы программы к общему времени простоя, вызванного сборкой мусора, на длительном промежутке времени.</p>
 </dd>
-<dt>Потребляемые ресурсы</dt><dd><p>объем ресурсов процессора и/или дополнительной памяти, потребляемых сборщиком.</p>
+<dt>Потребляемые ресурсы</dt><dd><p>Объем ресурсов процессора и/или дополнительной памяти, потребляемых сборщиком.</p>
 </dd>
 </dl>
 </div>

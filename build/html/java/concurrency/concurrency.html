@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; Handbook 2.0 documentation</title>
+  <title>Java Concurrency &mdash; Handbook 2.0 documentation</title>
   
 
   
@@ -25,6 +25,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -34,7 +35,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Примитивы синхронизации вне пакета java.util.concurrent" href="basics.html" />
+    <link rel="prev" title="Welcome to Handbook!" href="../../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -76,12 +79,23 @@
             
             
               <p class="caption"><span class="caption-text">Java</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Java Concurrency</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="executors.html">Executors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cas.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html">JMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html">Concurrent/parallel reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html">DCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../io/io.html">I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
 </ul>
 
             
@@ -127,7 +141,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>Java Concurrency</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -146,12 +160,72 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="java-concurrency">
+<h1>Java Concurrency<a class="headerlink" href="#java-concurrency" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Содержание</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locks.html">java.util.concurrent.Locks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executors.html">Executors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="executors.html#threadpoolexecutor">ThreadPoolExecutor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="executors.html#id2">Executors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="executors.html#forkjoinpull">ForkJoinPull</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cas.html">CAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cas.html#atomics">Atomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cas.html#aba-problem">ABA-problem</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jmm.html">JMM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#id1">Модели памяти процессоров</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#id2">Критическая секция</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#cache-coherence-protocol">Cache coherence protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#id3">Правила конструирования объектов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#volatile">volatile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html#happens-before">Правила межпоточного взаимодействия. Happens-before</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reduce.html">Concurrent/parallel reduce</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html#parallel">parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html#concurrent">concurrent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dcl.html">DCL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#id1">Не ленивая инициализация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#thread-safe">Не Thread-safe Синглтон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#id2">Синхронизированный Синглтон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#dcl-double-check-locking">DCL (double check locking) Синглтон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#dcl-20-25">DCL с оптимизацией (+ 20-25%)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#enum-singleton">Enum Singleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html#lazy-static-load-singleton">Lazy static load Singleton</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://habr.com/ru/company/luxoft/blog/157273/">https://habr.com/ru/company/luxoft/blog/157273/</a></p>
+<p><a class="reference external" href="http://java-online.ru/concurrent.xhtml">http://java-online.ru/concurrent.xhtml</a></p>
+<p><a class="reference external" href="https://mega.nz/folder/bc9BSJ5a">https://mega.nz/folder/bc9BSJ5a</a></p>
+</div>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basics.html" class="btn btn-neutral float-right" title="Примитивы синхронизации вне пакета java.util.concurrent" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Welcome to Handbook!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

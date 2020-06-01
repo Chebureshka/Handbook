@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JMM &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Concurrent/parallel reduce" href="reduce.html" />
+    <link rel="prev" title="CAS" href="cas.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="concurrency.html">Java Concurrency</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="executors.html">Executors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cas.html">CAS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">JMM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Модели памяти процессоров</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Критическая секция</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cache-coherence-protocol">Cache coherence protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Правила конструирования объектов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volatile">volatile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#happens-before">Правила межпоточного взаимодействия. Happens-before</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Освобождение монитора</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Операция записи в volatile-поле</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Состояния потоков</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Конструирование объекта</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cas">CAS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html">Concurrent/parallel reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html">DCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concurrency.html#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="concurrency.html">Java Concurrency</a> &raquo;</li>
+        
+      <li>JMM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/java/concurrency/jmm.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jmm">
+<h1>JMM<a class="headerlink" href="#jmm" title="Permalink to this headline">¶</a></h1>
+<p>JMM устанавливает правила использования потоками разделяемой памяти</p>
+<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/bNkjTDRB#_eYTedHnq4NaAfm3hl1hb0jMSG_I9uwRJ5Z4U4ydlvE" allowfullscreen ></iframe><iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/7V1n2bzL#byi2Y8w1RLtG3VRTqk2KZazuUsoxdZKLGR4ey02Df9Y" allowfullscreen ></iframe><div class="section" id="id1">
+<h2>Модели памяти процессоров<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Сильная модель</dt><dd><p>Все видят одинаковые значения.</p>
+</dd>
+<dt>Слабая модель</dt><dd><p>Предпологает наличие барьеров памяти.</p>
+<ol class="arabic simple">
+<li><p>Flush - Инструкция на сброс данных (отчистка кэша (сброс) в основную память).</p></li>
+<li><p>Инвалидация - объявление данных в кэше недействительными (значения впредь берутся из основной памяти).</p></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>Критическая секция<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Критическая секция - участок кода, где используется доступ к общему ресурсу.</p>
+<p>Не должно в критической секции быть более одного потока в один момент времени (~ или же могут быть несколько читателей).</p>
+<p>Решает проблемы Race Condition.</p>
+</div>
+<div class="section" id="cache-coherence-protocol">
+<h2>Cache coherence protocol<a class="headerlink" href="#cache-coherence-protocol" title="Permalink to this headline">¶</a></h2>
+<p>The protocol CPUs use to transfer cache lines between main memory and other CPUs</p>
+</div>
+<div class="section" id="id3">
+<h2>Правила конструирования объектов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Если объект правильно построен (без утечек ссылок в конструкторе объекта и без исключений) - все потоки будут видеть корректное состояние его final полей</p>
+<ul>
+<li><p>Объекты, достижимые через данные (инициализируемые) final поля так же будут гарантированно корректно отображаться для всех потоков.
+(например присвоение final полю ссылки на массив - все элементы массива будут независимо от потока одинаково видны без дополнительной синхронизации).</p>
+<p>Но если после проставления в final поле ссылки - объект по этой ссылке будет изменен - нет гарантий на корректное отображение.
+Он может быть изменен даже в том же конструкторе:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">};</span> <span class="n">data</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1">// после правильного конструирования data != null,</span>
+<span class="c1">// НО (в других потоках) data[1] может быть == 2</span>
+</pre></div>
+</div>
+</li>
+<li><p>Любое поле (в том числе final) может быть некорректно отображаемое, при публикации ссылки (<strong>досрочная публикация</strong>) на this в конструкторе (в т.ч. запись его в static поля), даже в текущем потоке, из-за перестановки.</p>
+<p>Только после завершения конструктора можно гарантировать видимость проставленного в final поле значения
+Любой анонимный объект созднный в конструкторе имеет неявную ссылку на текущий, оборачивающий объект.
+Так же при запуске потока из конструктора присутствует <strong>досрочная публикация</strong>.</p>
+</li>
+<li><p>Сначала происходит построение объекта - потом присваивание ссылки на него.</p></li>
+</ul>
+<p>Все значения, выставленне при объявлении статических полей или статическом инициализаторе выдны любому потоку, получившему доступ к этому классу, без какой либо синхронизации.</p>
+</div>
+<div class="section" id="volatile">
+<h2>volatile<a class="headerlink" href="#volatile" title="Permalink to this headline">¶</a></h2>
+<p>volatile - используется для данных, которые могут храниться только в heap (~~~)</p>
+<ul>
+<li><p>Обращение не в кэш процессора за значением, а напрямую в память (visibility).</p>
+<p>Кэш хранит копию часто используемых данных из RAM, обычно не больших блоков. Могут быть как из heap, так и из стека.</p>
+<p>cashline - то что считывается в кэш при доступе к определенному участку памяти.</p>
+</li>
+<li><p>Атомарные операции чтения и записи для long и double (на 32 разрядных процессорах).</p></li>
+<li><p>Переупорядочивание volatile переменных не происходит.</p>
+<p>Volatile переменные являются memory барьерами, в отношении любой операции чтения, произошедшей после чтения volaile, и любой операции записи, до записи в volaile переменную.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">volatile</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">read</span><span class="p">(</span><span class="kd">volatile</span><span class="p">);</span> <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Гарантируется Program Order: <span class="math notranslate nohighlight">\(setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]\)</span></p>
+</li>
+</ul>
+</div>
+<div class="section" id="happens-before">
+<h2>Правила межпоточного взаимодействия. Happens-before<a class="headerlink" href="#happens-before" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Отношение Happens-before (-&gt;): <br/>
+<span class="math notranslate nohighlight">\(Operation1[Thread1] \rightarrow Operation2[Thread2]\)</span></p>
+<p>Означает, что все изменения, выполненные Потоком1 до момента Операции1, а также изменения, которые повлекла эта операция - будут видны Потоку2 на Операции2 и после.
+Happens-before обеспечивает Flush кэша Потока1 по достижению Операции2</p>
+</li>
+<li><p>Happens-before обладает свойством транзитивности: <br/>
+<span class="math notranslate nohighlight">\(A[X] \rightarrow B[Y] \rightarrow C[Z] \sim A[X] \rightarrow C[Z]\)</span></p></li>
+<li><p>Отношение Program Order (=&gt;): <br/>
+<span class="math notranslate nohighlight">\(A[X] \rightarrow B[X] \sim A[X] \Rightarrow B[X]\)</span></p>
+<p>Описывает порядок Program Order, который определяет отношение Happens-before только на явных зависимых элементах, которые нальзя переставить друг с другом:</p>
+</li>
+<li><p>Race Condition: <br/>
+<span class="math notranslate nohighlight">\(SetVal[X] \rightarrow SetVal[Y] \Rightarrow ShowVal[Y] \leftrightarrow SetVal[X] \rightarrow SetVal[Z] \Rightarrow ShowVal[Z]\)</span></p></li>
+</ul>
+<div class="section" id="id4">
+<h3>Освобождение монитора<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>(Освобождение монитора) hb (каждого последующего заполучения того же самого монитора)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(EnterMonitor[X] \Rightarrow SetVal(myVal)[X] \Rightarrow ExitMonitor[X]) \rightarrow  ... \\ ... \rightarrow  (EnterMonitor[Y] \Rightarrow ShowVal[Y] \Rightarrow ExitMonitor[Y])\end{split}\]</div>
+<p class="centered">
+<strong><em>Выведет myVal, при том, что поле может быть не volatile!, так как на каждом hb выполняется flush (~~~)</em></strong></p><p><br/></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}SetVal(myVal)[X] \Rightarrow (EnterMonitor[X] \Rightarrow ExitMonitor[X]) \rightarrow ... \\ ... \rightarrow  (EnterMonitor[Y] \Rightarrow ExitMonitor[Y]) \Rightarrow ShowVal[Y]\end{split}\]</div>
+<p class="centered">
+<strong><em>Выведет myVal</em></strong></p><p>Все что случилось до hb и после (до выхода из монитора и после входа) - может восприниматься, как операции, происходящие в одном потоке с точки зрения JMM</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}lock.unlock[X] \rightarrow  \begin{bmatrix} lock.lock[Y] \\ if \, lock.tryLock[Y] \end{bmatrix}\end{split}\]</div>
+<p class="centered">
+<strong><em>То же самое, что и с захватом монитора</em></strong></p></div>
+<div class="section" id="id5">
+<h3>Операция записи в volatile-поле<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>(Операция записи в volatile-поле) hb (каждой последующей операции чтения того же самого поля)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}SetVolatile1(1)[X] \Rightarrow SetVolatile2(2)[X] \rightarrow ... \\ ... \rightarrow  when \, IsVolatile2(== 2)[Y] \Rightarrow ShowVolatile1[Y]\end{split}\]</div>
+<p class="centered">
+<strong><em>выведет 1</em></strong></p><p>Program Order (Happens-before) между записью в volatile поля гарантируется из-за модификатора volatile, а именно из-за того, что Volatile2 является таковым, т.е. memory барьером</p>
+<div class="math notranslate nohighlight">
+\[SetVal(1)[X] \Rightarrow SetVolatile2(2)[X] \rightarrow when \, IsVolatile2(== 2)[Y] \Rightarrow ShowVal[Y]\]</div>
+<p class="centered">
+<strong><em>выведет 1</em></strong></p></div>
+<div class="section" id="id6">
+<h3>Состояния потоков<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}X.run[X] \rightarrow  \begin{bmatrix} X.join[Y] \\ if \, (X.isAlive == false)[Y] \end{bmatrix}\end{split}\]</div>
+<p><br/></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X.interrupt[Y] \rightarrow \begin{bmatrix} catch \, throwInterruptedException[X] \\ if \, X.isInterrupted[Z] \\ if \, interrupted[X]) \end{bmatrix}\end{split}\]</div>
+<p><br/></p>
+<div class="math notranslate nohighlight">
+\[SetValue[Y] \Rightarrow  X.interrupt[Y] \rightarrow if \, interrupted[X] \Rightarrow  ShowValue[X]\]</div>
+<p class="centered">
+<strong><em>как и в примерах выше с отношениями hb</em></strong></p></div>
+<div class="section" id="id7">
+<h3>Конструирование объекта<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[CorrectConstructed[X] \rightarrow  finalize[Y]\]</div>
+<p><br/></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}StartConstructor[X] \Rightarrow SetVal[X] \Rightarrow CorrectConstructed[X] \rightarrow ... \\ ... \rightarrow   finalize[Y] \Rightarrow ShowVal[Y]\end{split}\]</div>
+</div>
+<div class="section" id="cas">
+<h3>CAS<a class="headerlink" href="#cas" title="Permalink to this headline">¶</a></h3>
+<p>Обычный CAS имеет семантику volatile read+write. В частности, это означает, что между двумя CAS-ами одной переменной всегда существует ребро happens-before</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reduce.html" class="btn btn-neutral float-right" title="Concurrent/parallel reduce" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cas.html" class="btn btn-neutral float-left" title="CAS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

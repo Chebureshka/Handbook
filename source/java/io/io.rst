@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-I/O
+Java I/O
 ##################
 
 .. toctree::

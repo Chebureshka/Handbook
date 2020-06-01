@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DCL &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="JIT" href="../jit/jit.html" />
+    <link rel="prev" title="Concurrent/parallel reduce" href="reduce.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="concurrency.html">Java Concurrency</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="executors.html">Executors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cas.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html">JMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html">Concurrent/parallel reduce</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DCL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Не ленивая инициализация</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thread-safe">Не Thread-safe Синглтон</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Синхронизированный Синглтон</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dcl-double-check-locking">DCL (double check locking) Синглтон</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dcl-20-25">DCL с оптимизацией (+ 20-25%)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enum-singleton">Enum Singleton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lazy-static-load-singleton">Lazy static load Singleton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concurrency.html#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="concurrency.html">Java Concurrency</a> &raquo;</li>
+        
+      <li>DCL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/java/concurrency/dcl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dcl">
+<h1>DCL<a class="headerlink" href="#dcl" title="Permalink to this headline">¶</a></h1>
+<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/zYcFhQyT#twYjAr-Aw46xNVq9ovCnMwkn3RDn_FYiw6NhQiTDz8s!715s" allowfullscreen ></iframe><p><br/></p>
+<div class="section" id="id1">
+<h2>Не ленивая инициализация<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="thread-safe">
+<h2>Не Thread-safe Синглтон<a class="headerlink" href="#thread-safe" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Синхронизированный Синглтон<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dcl-double-check-locking">
+<h2>DCL (double check locking) Синглтон<a class="headerlink" href="#dcl-double-check-locking" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>                 <span class="c1">// Приходят 3 потока</span>
+            <span class="kd">synchronized</span> <span class="p">(</span><span class="n">Singleton</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// Первый заходит, остальные ждут и заходят по очереди</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">INSTANCE</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>         <span class="c1">// Первый проходит. Остальные видят изменившееся значение, так как volatile</span>
+                    <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span> <span class="c1">// Инициализирует только первый</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dcl-20-25">
+<h2>DCL с оптимизацией (+ 20-25%)<a class="headerlink" href="#dcl-20-25" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Singleton</span> <span class="n">localRef</span> <span class="o">=</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">localRef</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">synchronized</span> <span class="p">(</span><span class="n">Singleton</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">localRef</span> <span class="o">=</span> <span class="n">INSTANCE</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">localRef</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">localRef</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+                    <span class="n">INSTANCE</span> <span class="o">=</span> <span class="n">localRef</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">localRef</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enum-singleton">
+<h2>Enum Singleton<a class="headerlink" href="#enum-singleton" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">enum</span> <span class="n">Singleton</span> <span class="p">{</span>
+    <span class="n">INSTANCE</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lazy-static-load-singleton">
+<h2>Lazy static load Singleton<a class="headerlink" href="#lazy-static-load-singleton" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Singleton</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">SingletonHolder</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SingletonHolder</span> <span class="p">{</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../jit/jit.html" class="btn btn-neutral float-right" title="JIT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reduce.html" class="btn btn-neutral float-left" title="Concurrent/parallel reduce" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

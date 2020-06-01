@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Executors &mdash; Handbook 2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CAS" href="cas.html" />
+    <link rel="prev" title="java.util.concurrent.Locks" href="locks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Handbook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Java</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="concurrency.html">Java Concurrency</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Locks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Executors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#threadpoolexecutor">ThreadPoolExecutor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Executors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forkjoinpull">ForkJoinPull</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Балансировка задач между потоками</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recursiveaction-recursivetask">Операции над RecursiveAction, RecursiveTask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Выбор ширины</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Блокировка</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cas.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jmm.html">JMM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduce.html">Concurrent/parallel reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcl.html">DCL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concurrency.html#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jit/jit.html">JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gc/gc.html">GC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collections/collections.html">Java Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scala/collections/collections.html">Scala Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/io.html">Java I/O</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Handbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="concurrency.html">Java Concurrency</a> &raquo;</li>
+        
+      <li>Executors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/java/concurrency/executors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="executors">
+<h1>Executors<a class="headerlink" href="#executors" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/executors.PNG" src="../../_images/executors.PNG" />
+</div>
+<div class="section" id="threadpoolexecutor">
+<h2>ThreadPoolExecutor<a class="headerlink" href="#threadpoolexecutor" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>TODO</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Executors<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>TODO</p>
+</div>
+</div>
+<div class="section" id="forkjoinpull">
+<h2>ForkJoinPull<a class="headerlink" href="#forkjoinpull" title="Permalink to this headline">¶</a></h2>
+<p>Разделяй и властвуй <br/>
+<a class="reference external" href="../../_static/jeeconf-May2012-forkjoin.pdf">Презентация</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t0dGLFtRR9c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><br/></p>
+<div class="section" id="id5">
+<h3>Балансировка задач между потоками<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Содержаться некоторые противроречия, указанные в блоках warning, во внутренней работе, так как многие источники говорят по-разному.
+Вот и хз кому верить Шипилеву или интернету.</p>
+<p>Вот тебе документация, читай: <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html">https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html</a></p>
+</div>
+<dl class="simple">
+<dt>Work arbitrage</dt><dd><p>Внешний ресурс распределяет какой воркер будет брать ту или иную задачу</p>
+</dd>
+<dt>Work dealing</dt><dd><p>При большой загруженности поток сам отдает задачу “соседу”</p>
+</dd>
+<dt>Work stealing</dt><dd><p>При отсутствии задач поток забирает задачу у “соседа” (ForkJoinPull)</p>
+</dd>
+</dl>
+<p>Внутри ForkJoinPull есть N воркеров. Внутри каждого воркера есть (lock free) очередь задач которую он исполняет, из конца которой другие воркеры могут забрать задачу.</p>
+<p>Добавление задач в ForkJoinPull происходит в одну из (случайную) отдельных (входных) очередей для внешних задач (в хвост). Для входных очередей используется синхронизация.</p>
+<p>После добавления один из ожидающих воркеров (без задач и без задач у соседей) оповещается, что появилась новая задача.</p>
+<p>При появлении задач в очереди воркера, которые еще не исполняются - оповещаются соседние воркеры, которые берут эти самые задачи.</p>
+<p>При выполнении разделения задач в воркере (fork) они отправляются ему же в очередь задач (в голову).</p>
+<p>При оповещении воркера он сначала смотрит - можно ли у соседей украсть задачу (?), если нет - он идет в очереди входных задач (в случайной последовательности (так как он блокирует очередь), пока не найдет таску).</p>
+</div>
+<div class="section" id="recursiveaction-recursivetask">
+<h3>Операции над RecursiveAction, RecursiveTask<a class="headerlink" href="#recursiveaction-recursivetask" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>fork</dt><dd><p>Запуск на выполнение новой подзадачи, задачи отправляются в голову. Со стороны воркера формируемые задачи в голове организуют стек (текущая &lt;- [третяя, вторая, первая, …, то что могут забрать]).</p>
+</dd>
+<dt>join</dt><dd><p>Семантика приостановления текущей задачи, до завершения указанной.</p>
+<ul>
+<li><p>Если в голове очереди текущего воркера есть требуемая задача - он начинает выполнять ее и возвращается по завершению к предыдущей задаче.</p></li>
+<li><p>Если требуемая задача не в голове очереди, но все же есть в ней - выполнить ее и т.д. (чуть менее эффективно)</p></li>
+<li><p>~ Если требуемой задачи нет в очереди - пытаемся узнать кто ее забрал, и забираем ее обратно, либо забираем поражденные требуемой задачей задачи.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Скорее стырим просто другую задачу. Но нужно еще поразбираться!</p>
+</div>
+</li>
+<li><p>~ Или же разгребаем свои задачи или помогаем с задачами взявшему.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ПРОТИВОРЕЧИТ: Охотимся только за зависимыми задачами (Иначе рискуем starvation’ом внутренних задач под напором внешних). Но Шипилев (вроде) говорит по другому</p>
+<p>Или блокируемся (что еще более не выгодно)</p>
+</div>
+</li>
+</ul>
+<p>После завершения выполнения другой задачи воркер смотрит появился ли результат, если нет продолжает выполнение других задач.</p>
+</dd>
+<dt>invokeAll</dt><dd><p>Ожидает выполнения всех переданных тасок. join на них не будет ожидать выполнения.</p>
+</dd>
+<dt>invoke</dt><dd><p>Вызванный не из потоков ForkJoinPull становится одним из воркеров (commonPool), и далее, как и потоки из ForkJoinPull выполняют fork и join.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h3>Выбор ширины<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[T = N / (C * L)\]</div>
+<p>T - число, означающее нужно ли дробить задачу на подзадачи (&gt;T) <br/>
+N - размер задачи <br/>
+C - количество CPU <br/>
+L - load factor [10..100]</p>
+</div>
+<div class="section" id="id7">
+<h3>Блокировка<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://docs.w3cub.com/openjdk~8/java/util/concurrent/forkjoinpool.managedblocker/">https://docs.w3cub.com/openjdk~8/java/util/concurrent/forkjoinpool.managedblocker/</a></p>
+<p>~ Блокировки через ManagedBlocker блокирют текущий поток (block) при этом создается новый поток в ForkJoinPull, на котором будут производится исполнения до пробуждения (isReleasable) первого.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cas.html" class="btn btn-neutral float-right" title="CAS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="locks.html" class="btn btn-neutral float-left" title="java.util.concurrent.Locks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chebureshka 🥟❤️🥟
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
