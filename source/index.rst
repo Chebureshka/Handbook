@@ -11,6 +11,7 @@
    scala/collections/collections.rst
    java/io/io.rst
    java/build/build.rst
+   java/specific/specific.rst
 
 .. toctree::
    :maxdepth: 1
