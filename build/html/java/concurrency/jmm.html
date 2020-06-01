@@ -82,7 +82,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="concurrency.html">Java Concurrency</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Примитивы синхронизации вне пакета java.util.concurrent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locks.html">java.util.concurrent.Locks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="executors.html">Executors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cas.html">CAS</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">JMM</a><ul>
@@ -180,7 +180,8 @@
   <div class="section" id="jmm">
 <h1>JMM<a class="headerlink" href="#jmm" title="Permalink to this headline">¶</a></h1>
 <p>JMM устанавливает правила использования потоками разделяемой памяти</p>
-<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/bNkjTDRB#_eYTedHnq4NaAfm3hl1hb0jMSG_I9uwRJ5Z4U4ydlvE" allowfullscreen ></iframe><iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/7V1n2bzL#byi2Y8w1RLtG3VRTqk2KZazuUsoxdZKLGR4ey02Df9Y" allowfullscreen ></iframe><div class="section" id="id1">
+<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/bNkjTDRB#_eYTedHnq4NaAfm3hl1hb0jMSG_I9uwRJ5Z4U4ydlvE" allowfullscreen ></iframe><iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/7V1n2bzL#byi2Y8w1RLtG3VRTqk2KZazuUsoxdZKLGR4ey02Df9Y" allowfullscreen ></iframe><p><br/></p>
+<div class="section" id="id1">
 <h2>Модели памяти процессоров<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>Сильная модель</dt><dd><p>Все видят одинаковые значения.</p>
@@ -246,6 +247,7 @@
 </div>
 <div class="section" id="happens-before">
 <h2>Правила межпоточного взаимодействия. Happens-before<a class="headerlink" href="#happens-before" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/puYPHysBN7U?start=6581" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><br/></p>
 <ul>
 <li><p>Отношение Happens-before (-&gt;): <br/>
 <span class="math notranslate nohighlight">\(Operation1[Thread1] \rightarrow Operation2[Thread2]\)</span></p>
@@ -259,7 +261,7 @@ Happens-before обеспечивает Flush кэша Потока1 по дос
 <p>Описывает порядок Program Order, который определяет отношение Happens-before только на явных зависимых элементах, которые нальзя переставить друг с другом:</p>
 </li>
 <li><p>Race Condition: <br/>
-<span class="math notranslate nohighlight">\(SetVal[X] \rightarrow SetVal[Y] \Rightarrow ShowVal[Y] \leftrightarrow SetVal[X] \rightarrow SetVal[Z] \Rightarrow ShowVal[Z]\)</span></p></li>
+<span class="math notranslate nohighlight">\(SetVal[X] \rightarrow \begin{Bmatrix} SetVal[Y] \Rightarrow ShowVal[Y] \\ SetVal[Z] \Rightarrow ShowVal[Z] \end{Bmatrix}\)</span></p></li>
 </ul>
 <div class="section" id="id4">
 <h3>Освобождение монитора<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>

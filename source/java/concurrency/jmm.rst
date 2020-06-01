@@ -14,6 +14,8 @@ JMM устанавливает правила использования пот�
     <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/7V1n2bzL#byi2Y8w1RLtG3VRTqk2KZazuUsoxdZKLGR4ey02Df9Y" allowfullscreen ></iframe>
 
 
+|br|
+
 Модели памяти процессоров
 ===========================
 Сильная модель 
@@ -99,6 +101,12 @@ volatile - используется для данных, которые могу
 Правила межпоточного взаимодействия. Happens-before
 ====================================================
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/puYPHysBN7U?start=6581" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+|br|
+
 * Отношение Happens-before (->): |br|
   :math:`Operation1[Thread1] \rightarrow Operation2[Thread2]`
 
@@ -117,7 +125,7 @@ volatile - используется для данных, которые могу
 
 
 * Race Condition: |br|
-  :math:`SetVal[X] \rightarrow SetVal[Y] \Rightarrow ShowVal[Y] \leftrightarrow SetVal[X] \rightarrow SetVal[Z] \Rightarrow ShowVal[Z]`
+  :math:`SetVal[X] \rightarrow \begin{Bmatrix} SetVal[Y] \Rightarrow ShowVal[Y] \\ SetVal[Z] \Rightarrow ShowVal[Z] \end{Bmatrix}`
 
 
 Освобождение монитора

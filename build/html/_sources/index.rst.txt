@@ -10,3 +10,8 @@
    java/collections/collections.rst
    scala/collections/collections.rst
    java/io/io.rst
+   java/build/build.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Java Frameworks
