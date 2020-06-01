@@ -5,6 +5,7 @@
    :caption: Java
 
    java/concurrency/concurrency.rst
+   java/basics/basics.rst
    java/jit/jit.rst
    java/gc/gc.rst
    java/collections/collections.rst
