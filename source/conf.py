@@ -37,7 +37,6 @@ extensions = [
 "sphinx.ext.autodoc",
 'sphinx.ext.todo',
 'sphinx.ext.intersphinx',
-'rst2pdf.pdfbuilder',
 ]
 
 todo_include_todos = True
