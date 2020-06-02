@@ -24,4 +24,5 @@
    :maxdepth: 1
    :caption: Java Frameworks
 
+   frameworks/akka/akka.rst
    
