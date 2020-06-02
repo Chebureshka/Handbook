@@ -25,4 +25,5 @@
    :caption: Java Frameworks
 
    frameworks/akka/akka.rst
+   frameworks/spark/spark.rst
    
