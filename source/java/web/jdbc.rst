@@ -48,6 +48,6 @@ JDBC (англ. Java DataBase Connectivity — соединение с база�
 Links
 =====
 
-https://habr.com/ru/post/326614/
+`Простой пример JDBC для начинающих <https://habr.com/ru/post/326614/>`_
 
-https://proselyte.net/tutorials/jdbc/simple-application-example/
+`Руководство по JDBC. Пример простого приложения <https://proselyte.net/tutorials/jdbc/simple-application-example/>`_

@@ -153,8 +153,8 @@ Java API
 Links
 ======
 
-https://tproger.ru/translations/what-are-web-sockets/
+`Руководство по API Java для WebSocket <https://www.codeflow.site/ru/article/java-websockets>`_
 
-https://www.codeflow.site/ru/article/java-websockets
+https://tproger.ru/translations/what-are-web-sockets/
 
 https://pro-java.ru/java-dlya-nachinayushhix/chto-takoe-veb-sokety-java/

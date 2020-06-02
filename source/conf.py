@@ -37,9 +37,11 @@ extensions = [
 "sphinx.ext.autodoc",
 'sphinx.ext.todo',
 'sphinx.ext.intersphinx',
+'rst2pdf.pdfbuilder',
 ]
 
-todo_include_todos=True
+todo_include_todos = True
+pdf_documents = [('index', u'rst2pdf', u'Handbook', u'Chebureshka'),]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

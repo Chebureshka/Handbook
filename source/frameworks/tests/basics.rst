@@ -237,4 +237,4 @@ Coverage, other metrics
 Links
 ===============
 
-https://habr.com/ru/post/279535/
+`Тестирование. Фундаментальная теория <https://habr.com/ru/post/279535/>`_

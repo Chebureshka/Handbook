@@ -21,8 +21,10 @@ Java Collection Framework — иерархия интерфейсов и их р
 Links
 **********
 
-https://habr.com/ru/post/237043/
+`Шпаргалка по стандартным и сторонним коллекциям <https://habr.com/ru/company/luxoft/blog/256877/>`_
 
-https://habr.com/ru/company/luxoft/blog/157273/
+`Java Collections Framework <https://habr.com/ru/post/237043/>`_
 
-http://java-online.ru/concurrent.xhtml
+`java.util.concurrent.* <https://habr.com/ru/company/luxoft/blog/157273/>`_
+
+`Многопоточный пакет util.concurrent <http://java-online.ru/concurrent.xhtml>`_

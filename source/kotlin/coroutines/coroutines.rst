@@ -71,5 +71,5 @@ Coroutine Builders
 Links
 ********************************
 
-https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html
+`Документация kotlin <https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html>`_
 

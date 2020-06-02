@@ -15,3 +15,4 @@ Java I/O
 Links
 *******
 
+`Оптимальный путь преобразования InputStream в строку <https://habr.com/ru/company/luxoft/blog/278233/>`_

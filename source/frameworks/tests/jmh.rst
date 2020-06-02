@@ -8,4 +8,4 @@ JMH
 Links
 =========
 
-https://www.codeflow.site/ru/article/java__java-jmh-benchmark-tutorial
+`Учебное пособие по Java JMH <https://www.codeflow.site/ru/article/java__java-jmh-benchmark-tutorial>`_

@@ -17,4 +17,4 @@ Scala Collections
 Links
 *******
 
-https://docs.scala-lang.org/overviews/collections-2.13/introduction.html
+`Документация Scala <https://docs.scala-lang.org/overviews/collections-2.13/introduction.html>`_

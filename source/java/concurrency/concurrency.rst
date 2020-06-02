@@ -19,8 +19,8 @@ Java Concurrency
 Links
 *******
 
-https://habr.com/ru/company/luxoft/blog/157273/
+`java.util.concurrent.* <https://habr.com/ru/company/luxoft/blog/157273/>`_
 
-http://java-online.ru/concurrent.xhtml
+`Многопоточный пакет util.concurrent <http://java-online.ru/concurrent.xhtml>`_
 
-https://mega.nz/folder/bc9BSJ5a
+`Лекции (EPUM) <https://mega.nz/folder/bc9BSJ5a#fz-L6oRGtQGYCRH0XIuukw>`_

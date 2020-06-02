@@ -106,6 +106,6 @@ JUnit5
 Links
 =======
 
-https://habr.com/ru/post/120101/
+`Тестирование в Java. JUnit4 <https://habr.com/ru/post/120101/>`_
 
-https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations
+`JUnit 5 User Guide <https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations>`_

@@ -49,4 +49,4 @@ HotSpot Server VM (C2)
 Links
 ******
 
-https://www.ibm.com/developerworks/ru/library/j-jtp12214/index.html
+`Динамическая компиляция и измерение производительности (IBM) <https://www.ibm.com/developerworks/ru/library/j-jtp12214/index.html>`_

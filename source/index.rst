@@ -10,6 +10,7 @@
    java/gc/gc.rst
    java/collections/collections.rst
    scala/collections/collections.rst
+   java/streams/streams.rst
    java/io/io.rst
    java/build/build.rst
    kotlin/coroutines/coroutines.rst
@@ -17,6 +18,7 @@
    java/web/web.rst
    java/specific/specific.rst
    frameworks/tests/tests.rst
+   java/links.rst
 
 .. toctree::
    :maxdepth: 1

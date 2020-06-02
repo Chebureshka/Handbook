@@ -72,6 +72,6 @@ Mockito
 Links
 =====
 
-https://habr.com/ru/post/444982/
+`Mockito и как его готовить <https://habr.com/ru/post/444982/>`_
 
-https://habr.com/ru/post/243155/
+`Шесть простых примеров по Mockito (перевод) <https://habr.com/ru/post/243155/>`_
