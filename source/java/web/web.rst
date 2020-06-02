@@ -9,6 +9,7 @@ Java Web
 
    jdbc.rst
    servlets.rst
+   websockets.rst
 
 
 Links
