@@ -37,6 +37,7 @@ extensions = [
 "sphinx.ext.autodoc",
 'sphinx.ext.todo',
 'sphinx.ext.intersphinx',
+'sphinxcontrib.contentui'
 ]
 
 todo_include_todos = True
