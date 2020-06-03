@@ -43,3 +43,12 @@
    network/distr/distr.rst
    network/transactions/transactions.rst
    network/reactive/reactive.rst
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tools 
+
+   tools/git/git.rst
+   tools/docker/docker.rst
