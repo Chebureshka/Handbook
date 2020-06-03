@@ -10,7 +10,7 @@
    replication.rst
    cap.rst
    shard.rst
-   recons.rst
+   reconc.rst
    mvcc.rst
 
 
