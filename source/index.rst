@@ -42,3 +42,4 @@
 
    network/distr/distr.rst
    network/transactions/transactions.rst
+   network/reactive/reactive.rst

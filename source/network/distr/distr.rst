@@ -9,6 +9,9 @@
 
    replication.rst
    cap.rst
+   shard.rst
+   recons.rst
+   mvcc.rst
 
 
 
