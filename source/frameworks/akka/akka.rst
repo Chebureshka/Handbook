@@ -118,7 +118,7 @@ ActorContext
   Принимает функцию, возвращает актор, отправка сообщений которому переотправляется в текущий актор (``self``), с преобразованием типа сообщения через переданную функцию
 
 
-> ask(target: RecipientRef[Req], createRequest: ActorRef[Res] => Req)(mapResponse: Try[Res] => T) |br| (implicit responseTimeout: Timeout, classTag: ClassTag[Res]): Unit
+> ask(target: RecipientRef[Req], createRequest: ActorRef[Res] => Req) |br| (mapResponse: Try[Res] => T) |br| (implicit responseTimeout: Timeout, classTag: ClassTag[Res]): Unit
     1. Адресуется запрос актору ``target``, а именно сообщение **Req**, полученное путем применения функции ``createRequest`` и передачи параметра **ActorRef[Res]**, являющегося адаптером к текущему.
     
     2. Если ответ был получен и передан в адаптер (**ActorRef[Res]**) соответсвутющее сообщение преобразуется в корректный тип сообщения для текущего актора применением функции ``mapResponse``.
