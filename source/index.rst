@@ -42,7 +42,16 @@
 
    network/distr/distr.rst
    network/transactions/transactions.rst
-   network/reactive/reactive.rst
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software Design 
+
+   design/patterns/patterns.rst
+   design/principles/principles.rst
+   design/reactive/reactive.rst
 
 
 
