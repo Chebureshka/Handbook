@@ -1,0 +1,161 @@
+.limit-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 600px;
+}
+
+
+.code-markup > dl > dt > code {
+  border: none !important;
+  background: none !important;
+
+  font-size: 100% !important;
+}
+
+.code-markup > dl > dd  {
+  border-left: 3px solid rgba(215, 219, 221, 1);
+  padding-left: 9px;
+}
+
+
+.green-quote {
+  border-left: 6px solid rgba(46, 204, 113, 1);
+  padding-left: 9px;
+}
+
+.green-quote2 {
+  border-left: 6px solid rgba(46, 204, 113, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.green-quote3 {
+  border-left: 12px solid rgba(46, 204, 113, 1);
+  border-style: double;
+  background-color: rgba(46, 204, 113, .15);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+
+.blue-quote {
+  border-left: 6px solid rgba(52, 152, 219, 1);
+  padding-left: 9px;
+}
+
+.blue-quote2 {
+  border-left: 6px solid rgba(52, 152, 219, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.blue-quote3 {
+  border-left: 12px solid rgba(52, 152, 219, 1);
+  border-style: double;
+  background-color: rgba(52, 152, 219, .15);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+
+.red-quote {
+  border-left: 6px solid rgba(231, 76, 60, 1);
+  padding-left: 9px;
+}
+
+.red-quote2 {
+  border-left: 6px solid rgba(231, 76, 60, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.red-quote3 {
+  border-left: 12px solid rgba(231, 76, 60, 1);
+  border-style: double;
+  background-color: rgba(231, 76, 60, .10);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+
+
+.orrange-quote {
+  border-left: 6px solid rgba(243, 156, 18, 1);
+  padding-left: 9px;
+}
+
+.orrange-quote2 {
+  border-left: 6px solid rgba(243, 156, 18, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.orrange-quote3 {
+  border-left: 12px solid rgba(243, 156, 18, 1);
+  border-style: double;
+  background-color: rgba(243, 156, 18, .15);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+
+
+
+.gray-quote {
+  border-left: 6px solid rgba(215, 219, 221 , 1);
+  padding-left: 9px;
+}
+
+.gray-quote2 {
+  border-left: 6px solid rgba(215, 219, 221 , 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.gray-quote3 {
+  border-left: 12px solid rgba(202, 207, 210  , 1);
+  border-style: double;
+  background-color: rgba(202, 207, 210 , .22);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+
+
+
+.black-quote {
+  border-left: 6px solid rgba(52, 73, 94, 1);
+  padding-left: 9px;
+}
+
+.black-quote2 {
+  border-left: 6px solid rgba(52, 73, 94, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.black-quote3 {
+  border-left: 18px solid rgba(52, 73, 94, 1);
+  border-style: double;
+  background-color: rgba(52, 73, 94, .15);
+  padding-left: 9px;
+
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
