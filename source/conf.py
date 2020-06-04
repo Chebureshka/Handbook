@@ -36,8 +36,13 @@ extensions = [
 "sphinx_rtd_theme",
 "sphinx.ext.autodoc",
 'sphinx.ext.todo',
-'sphinx.ext.intersphinx',
-'sphinxcontrib.contentui'
+'sphinx.ext.intersphinx', # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+'sphinxcontrib.contentui',
+
+#'sphinx.ext.graphviz',  # https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html
+#'sphinx.ext.imgconverter', # https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html
+#'sphinx.ext.inheritance_diagram', # https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html
+
 ]
 
 todo_include_todos = True
@@ -78,3 +83,7 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    'style.css',
+]
