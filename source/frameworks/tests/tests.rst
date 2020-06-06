@@ -3,16 +3,17 @@
 Java Tests
 ##################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+.. container:: left-col
 
-   basics.rst
-   junit.rst
-   mockito.rst
-   jmh.rst
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
 
+      basics.rst
+      junit.rst
+      mockito.rst
+      jmh.rst
 
-Links
-*******
+.. container:: right-col
 
+   |br|

@@ -3,11 +3,17 @@
 Java Specific Objects
 ######################
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Содержание
+.. container:: left-col
 
-   proxy.rst
-   classloader.rst
-   references.rst
-   jmx.rst
+   .. toctree::
+      :maxdepth: 1
+      :caption: Содержание
+
+      proxy.rst
+      classloader.rst
+      references.rst
+      jmx.rst
+
+.. container:: right-col
+
+   |br|

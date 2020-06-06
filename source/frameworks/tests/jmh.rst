@@ -2,10 +2,15 @@
 
 JMH
 *********
+.. container:: left-col
 
-.. todo:: https://www.codeflow.site/ru/article/java__java-jmh-benchmark-tutorial
+    |br|
 
-Links
-=========
 
-`Учебное пособие по Java JMH <https://www.codeflow.site/ru/article/java__java-jmh-benchmark-tutorial>`_
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Учебное пособие по Java JMH <https://www.codeflow.site/ru/article/java__java-jmh-benchmark-tutorial>`_

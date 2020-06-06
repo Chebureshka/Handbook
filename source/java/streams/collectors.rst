@@ -7,33 +7,55 @@
 
 reduce
 ------
+.. container:: left-col
 
-`Optional<T> reduce(BinaryOperator<T> accumulator) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-java.util.function.BinaryOperator->`_
+    |br|
 
-`T reduce(T identity, BinaryOperator<T> accumulator) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-T-java.util.function.BinaryOperator->`_
+.. container:: right-col
 
-`U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-U-java.util.function.BiFunction-java.util.function.BinaryOperator->`_
+    .. container:: methods-block
+
+        `Optional<T> reduce(BinaryOperator<T> accumulator) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-java.util.function.BinaryOperator->`_
+
+        `T reduce(T identity, BinaryOperator<T> accumulator) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-T-java.util.function.BinaryOperator->`_
+
+        `U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#reduce-U-java.util.function.BiFunction-java.util.function.BinaryOperator->`_
 
 collect
 -------
+.. container:: left-col
 
-`<R> R collect(Supplier<R> supplier, BiConsumer<R, ? super T> accumulator, BiConsumer<R, R> combiner) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.function.Supplier-java.util.function.BiConsumer-java.util.function.BiConsumer->`_
+    |br|
 
-`<R,A> R collect(Collector<? super T,A,R> collector) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector->`_
+.. container:: right-col
+
+    .. container:: methods-block
+
+        `<R> R collect(Supplier<R> supplier, BiConsumer<R, ? super T> accumulator, BiConsumer<R, R> combiner) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.function.Supplier-java.util.function.BiConsumer-java.util.function.BiConsumer->`_
+
+        `<R,A> R collect(Collector<? super T,A,R> collector) <https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#collect-java.util.stream.Collector->`_
 
 Collector
 ---------
+.. container:: left-col
 
-.. raw:: html
+    |br|
 
-    <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/iAtl3Iob#sQ8N2EW0_obO_9ZXyh_3KnBNwzOdykNNnWgQbvFAyB4!3749s" allowfullscreen ></iframe>
+.. container:: right-col
 
-|br|
+    .. raw:: html
+
+        <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/iAtl3Iob#sQ8N2EW0_obO_9ZXyh_3KnBNwzOdykNNnWgQbvFAyB4!3749s" allowfullscreen ></iframe>
 
 
 Collectors
 ----------
+.. container:: left-col
 
-.. raw:: html
+    |br|
 
-    <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/qE1VRILI#SK69Guct1sOqTuGagS8AjPIWRHfU4Gwk6hL_riwwYbI" allowfullscreen ></iframe>
+.. container:: right-col
+
+    .. raw:: html
+
+        <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/qE1VRILI#SK69Guct1sOqTuGagS8AjPIWRHfU4Gwk6hL_riwwYbI" allowfullscreen ></iframe>

@@ -2,8 +2,13 @@
 
 java.io 
 ********************************
+.. container:: left-col
 
-Потокоориентированный, Блокирующий (синхронный) ввод/вывод
+    Потокоориентированный, Блокирующий (синхронный) ввод/вывод
+
+.. container:: right-col
+
+    |br|
 
 .. contents:: Иерархия:
 
@@ -11,174 +16,239 @@ java.io
 
 InputStream
 =============
+.. container:: left-col
 
-Байтовый поток ввода используется для считывания данных (байт) с источника
+    Байтовый поток ввода используется для считывания данных (байт) с источника
 
-.. code-block:: java
+    .. toggle-header::
+        :header: Методы
 
-    read(); read(byte[]); read(byte[], int, int); readAllBytes(); skip(long); ... close();
+        .. code-block:: java
 
-    // получить приблизительное число байт, которое можно прочитать из данного потока ввода
-    available;
-        
-    // чтение всех байт из потока ввода и передача их в указанный поток вывода
-    transferTo(OutputStream out);
-        
+            read(); read(byte[]); read(byte[], int, int); readAllBytes(); skip(long); ... close();
 
-.. code-block:: java
+            // получить приблизительное число байт, которое можно прочитать из данного потока ввода
+            available;
 
-    // метка позиции потока ввода
-    mark;
-        
-    // сброс до помеченной позиции
-    reset;
-        
-    // доступна ли возможность помечания позиции
-    markSupported;
-        
+            // чтение всех байт из потока ввода и передача их в указанный поток вывода
+            transferTo(OutputStream out);
+
+
+        .. code-block:: java
+
+            // метка позиции потока ввода
+            mark;
+
+            // сброс до помеченной позиции
+            reset;
+
+            // доступна ли возможность помечания позиции
+            markSupported;
+
+    |br|
+
 
 
 FileInputStream
 -----------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(fileName/File/FileDescriptor);
+    Чтение из файла
 
-Чтение из файла
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FileInputStream(fileName/File/FileDescriptor);
 
 
 ByteArrayInputStream
 ------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(byte buf[]);
 
-Чтение из указанного буфера
 
+    Чтение из указанного буфера
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new ByteArrayInputStream(byte buf[]);
 
 SequenceInputStream
 -----------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(InputStream s1, InputStream s2);
 
-Объединяет потоки ввода последовательно, т.е. после прочтения s1 последует чтение из s2.
 
-Внутренние потоки закрываются по достижению их конца, а также при явном вызове close() 
+    Объединяет потоки ввода последовательно, т.е. после прочтения s1 последует чтение из s2.
 
+    Внутренние потоки закрываются по достижению их конца, а также при явном вызове close() 
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new SequenceInputStream(InputStream s1, InputStream s2);
 
 ObjectInputStream
 --------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(InputStream in);
 
-Чтение ранее сериализованных данных из потока. В конструкторе он принимает ссылку на поток ввода.
 
-Вложенный поток закрывается при закрытии данного.
 
+    Чтение ранее сериализованных данных из потока. В конструкторе он принимает ссылку на поток ввода.
+
+    Вложенный поток закрывается при закрытии данного.
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new ObjectInputStream(InputStream in);
 
 PipedInputStream
 -----------------
-Анологично PipedOutputStream_
+.. container:: left-col
+
+    Анологично PipedOutputStream_
 
 
 FilterInputStream
 --------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(InputStream in);
 
-Оборачивает базовый стрим (делегирование), добавляя некоторые полезные методы
 
+    Оборачивает базовый стрим (делегирование), добавляя некоторые полезные методы
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FilterInputStream(InputStream in);
 
 DataInputStream
 ^^^^^^^^^^^^^^^
-Входной поток, включающий методы для чтения стандартных типов данных Java
+.. container:: left-col
+
+    Входной поток, включающий методы для чтения стандартных типов данных Java
 
 
 BufferedInputStream
 ^^^^^^^^^^^^^^^^^^^
-Буферезированный входной поток 
+.. container:: left-col
+
+    Буферезированный входной поток 
 
 
 PushbackInputStream
 ^^^^^^^^^^^^^^^^^^^^
-.. code-block:: java
 
-    constructor(InputStream in);
+.. container:: right-col
 
+    .. code-block:: java
 
+        new PushbackInputStream(InputStream in);
 
 
 
 OutputStream
 ==============
-Байтовый поток вывода используется для записи данных (байт) по месту назначения
+.. container:: left-col
 
-.. code-block:: java
+    Байтовый поток вывода используется для записи данных (байт) по месту назначения
 
-    write(); write(byte[]); write(byte[], int, int); ... close();
+    .. toggle-header::
+        :header: Методы
 
-    // очищает буфер вывода, записывая все его содержимое
-    flush;
-        
+        .. code-block:: java
 
+            write(); write(byte[]); write(byte[], int, int); ... close();
+
+            // очищает буфер вывода, записывая все его содержимое
+            flush;
+
+    |br|
 
 FileOutputStream
 -----------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(fileName/File/FileDescriptor);
+    Запись в файл
 
-Запись в файл
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FileOutputStream(fileName/File/FileDescriptor);
 
 
 ByteArrayOutputStream
 ------------------------
-Создает буфер в памяти. Все данные, посылаемые в этот поток, размещаются в созданном буфере.
+.. container:: left-col
+
+    Создает буфер в памяти. Все данные, посылаемые в этот поток, размещаются в созданном буфере.
 
 
 ObjectOutputStream
 ----------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(OutputStream out);
+    Оборачивает поток вывода для отправки в него сериализованных объектов.
 
-Оборачивает поток вывода для отправки в него сериализованных объектов.
+    Вложенный поток закрывается при закрытии данного.
 
-Вложенный поток закрывается при закрытии данного.
+.. container:: right-col
 
+    .. code-block:: java
+
+        new ObjectOutputStream(OutputStream out);
 
 PipedOutputStream
 -----------------
-Предоставляет канал для передачи байт в указанный PipedInputStream (connect(PipedInputStream_ snk))
+.. container:: left-col
+
+    Предоставляет канал для передачи байт в указанный PipedInputStream_ ``(connect(PipedInputStream snk))``
 
 
 FilterOutputStream
 -------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(OutputStream out);
 
-Оборачивает базовый стрим (делегирование), добавляя некоторые полезные методы.
 
-Вложенный поток закрывается при закрытии данного.
+    Оборачивает базовый стрим (делегирование), добавляя некоторые полезные методы.
 
+    Вложенный поток закрывается при закрытии данного.
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FilterOutputStream(OutputStream out);
 
 DataOutputStream
 ^^^^^^^^^^^^^^^^
-Выходной поток, включающий методы для записи стандартных типов данных Java
+.. container:: left-col
+
+    Выходной поток, включающий методы для записи стандартных типов данных Java
 
 
 BufferedOutputStream
 ^^^^^^^^^^^^^^^^^^^^
-Буферизированный выходной поток
+.. container:: left-col
+
+    Буферизированный выходной поток
 
 
 PrintStream
 ^^^^^^^^^^^
-Используется для вывода на консоль
+.. container:: left-col
+
+    Используется для вывода на консоль
 
 
 
@@ -187,151 +257,226 @@ PrintStream
 
 Reader
 ========
-Символьный поток ввода используется для считывания данных (символов) с источника
+.. container:: left-col
 
-.. code-block:: java
+    Символьный поток ввода используется для считывания данных (символов) с источника
 
-    read(); read(char[]); read(char[], int, int); 
-    available(); skip(long); transferTo(..);
-    mark(long); ... close();
+    .. toggle-header::
+        :header: Методы
 
+        .. code-block:: java
+
+            read(); read(char[]); read(char[], int, int); 
+            available(); skip(long); transferTo(..);
+            mark(long); ... close();
+
+    |br|
 
 StringReader
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(String s);
 
-Входной поток, читающий из строки
 
+    Входной поток, читающий из строки
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new StringReader(String s);
 
 CharArrayReader
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(char buf[]);
 
-Входной поток, который читает из символьного массива
 
+    Входной поток, который читает из символьного массива
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new CharArrayReader(char buf[]);
 
 BufferedReader
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(Reader in);
 
-Буферизированный входной символьный поток
 
+    Буферизированный входной символьный поток
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new BufferedReader(Reader in);
 
 FilterReader
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(Reader in);
 
-Фильтрующий читатель (абстрактный класс)
 
+
+    Фильтрующий читатель (абстрактный класс)
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FilterReader(Reader in);
 
 PipedReader
 ---------------------------------
-Входной канал
+.. container:: left-col
+
+
+    Входной канал
 
 
 PushbackReader
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(Reader in);
+    Входной поток, позволяющий возвращать символы обратно в поток
 
-Входной поток, позволяющий возвращать символы обратно в поток
+.. container:: right-col
 
+    .. code-block:: java
+
+        new PushbackReader(Reader in);
 
 InputStreamReader
 ---------------------------------
-An InputStreamReader is a bridge from byte streams to character streams
+.. container:: left-col
+
+    An InputStreamReader is a bridge from byte streams to character streams
 
 
 FileReader
 ^^^^^^^^^^^^
-.. code-block:: java
+.. container:: left-col
 
-    constructor(fileName/File/FileDescriptor);
 
-Входной поток, читающий файл
 
+    Входной поток, читающий файл
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FileReader(fileName/File/FileDescriptor);
 
 
 
 Writer
 ===========
-.. code-block:: java
+.. container:: left-col
 
-    write(); write(byte[]); write(byte[], int, int); 
-    flush; ... close();
+    Символьный поток вывода используется для записи данных (символы) по месту назначения
 
-Символьный поток вывода используется для записи данных (символы) по месту назначения
+    .. toggle-header::
+        :header: Методы
 
+        .. code-block:: java
+
+            write(); write(byte[]); write(byte[], int, int); 
+            flush; ... close();
+
+    |br|
 
 StringWriter
 ---------------------------------
-Выходной поток, пишущий в строку
+.. container:: left-col
+
+    Выходной поток, пишущий в строку
 
 
 BufferedWriter
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(Writer out);
 
-Буферизированный выходной символьный поток
 
+
+    Буферизированный выходной символьный поток
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new BufferedWriter(Writer out);
 
 CharArrayWriter
 ---------------------------------
-Выходной поток, который пишет в символьный массив
+.. container:: left-col
+
+    Выходной поток, который пишет в символьный массив
 
 
 FilterWriter
 ---------------------------------
-.. code-block:: java
+.. container:: left-col
 
-    constructor(Writer out);
 
-Фильтрующий писатель (абстрактный класс)
 
+    Фильтрующий писатель (абстрактный класс)
+
+.. container:: right-col
+
+    .. code-block:: java
+
+        new FilterWriter(Writer out);
 
 PipedWriter
 ---------------------------------
-Выходной канал
+.. container:: left-col
+
+    Выходной канал
 
 
 PrintWriter
 ---------------------------------
-Выходной поток в консоль, включающий методы print() и println()
+.. container:: left-col
+
+    Выходной поток в консоль, включающий методы ``print()`` и ``println()``
 
 
 InputStreamWriter
 ---------------------------------
-Выходной поток, транслирующий байты в символы
+.. container:: left-col
+
+    Выходной поток, транслирующий байты в символы
 
 
 FileWriter
 ^^^^^^^^^^^
-Выходной поток, пишущий в файл
+.. container:: left-col
+
+    Выходной поток, пишущий в файл
 
 
 File
 ========
-Представляет дескриптор файла или каталога. В том числе не существующего.
+.. container:: left-col
 
-Позволяет получить информацию о файле: права доступа, время и дата создания, путь к каталогу. А также осуществлять навигацию по иерархиям подкаталогов.
+
+    Представляет дескриптор файла или каталога. В том числе не существующего.
+
+    Позволяет получить информацию о файле: права доступа, время и дата создания, путь к каталогу. А также осуществлять навигацию по иерархиям подкаталогов.
 
 
 RandomAccessFile
 ==================
-Дескриптор файла, со случайным доступом. Реализуют интерфейсы DataInput и DataOutput.
+.. container:: left-col
 
-.. code-block:: java
 
-    // позволяет переместиться к определенной позиции и изменить хранящееся там значение
-    seek();
+    Дескриптор файла, со случайным доступом. Реализуют интерфейсы DataInput и DataOutput.
+
+    .. code-block:: java
+
+        // позволяет переместиться к определенной позиции и изменить хранящееся там значение
+        seek();

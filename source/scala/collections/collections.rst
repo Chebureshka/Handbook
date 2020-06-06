@@ -3,18 +3,25 @@
 Scala Collections
 ##################
 
-.. figure:: ../../_static/photo_2020-06-01_01-17-33.jpg
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+   .. raw:: html
 
-   immutable.rst
-   mutable.rst
-   parallel.rst
+      <object data="../../_static/collections-diagram-213.svg" type="image/svg+xml"></object>
 
 
-Links
-*******
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
 
-`Документация Scala <https://docs.scala-lang.org/overviews/collections-2.13/introduction.html>`_
+      immutable.rst
+      mutable.rst
+      parallel.rst
+
+.. container:: right-col
+
+    .. container:: links-block
+
+      .. rubric:: Ссылки:
+
+      `Документация Scala <https://docs.scala-lang.org/overviews/collections-2.13/introduction.html>`_

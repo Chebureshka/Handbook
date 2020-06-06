@@ -2,13 +2,17 @@
 
 Принципы 
 ##################
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
 
+      solid.rst
+      dry.rst
+      kiss.rst
+      yagni.rst
 
+.. container:: right-col
 
-
-Links
-*******
+   |br|

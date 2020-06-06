@@ -2,17 +2,22 @@
 
 Java I/O
 ##################
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
+   
+      serialization.rst
+      java.io.rst
+      java.nio.rst
 
-   serialization.rst
-   java.io.rst
-   java.nio.rst
 
 
-Links
-*******
+.. container:: right-col
 
-`Оптимальный путь преобразования InputStream в строку <https://habr.com/ru/company/luxoft/blog/278233/>`_
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Оптимальный путь преобразования InputStream в строку <https://habr.com/ru/company/luxoft/blog/278233/>`_

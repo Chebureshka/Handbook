@@ -2,15 +2,19 @@
 
 Build Systems
 ##################
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
 
-   manual.rst
+      manual.rst
 
 
-Links
-*******
+.. container:: right-col
 
-`Maven Central Repository <https://search.maven.org/classic/#search%7Cga%7C1%7C>`_
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Maven Central Repository <https://search.maven.org/classic/#search%7Cga%7C1%7C>`_

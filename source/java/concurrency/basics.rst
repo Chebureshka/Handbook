@@ -10,11 +10,13 @@
 
 .. container:: right-col
 
-    .. rubric:: Ссылки:
+    .. container:: links-block
 
-    `Пример использования <https://javadevblog.com/primer-ispol-zovaniya-wait-notify-i-notifyall-v-java.html>`_
-
-    `Baeldung <https://www.baeldung.com/java-wait-notify>`_
+        .. rubric:: Ссылки:
+    
+        `Пример использования <https://javadevblog.com/primer-ispol-zovaniya-wait-notify-i-notifyall-v-java.html>`_
+    
+        `Baeldung <https://www.baeldung.com/java-wait-notify>`_
 
 Синхронизация с помощью ``wait() / notify()``
 ===============================================
@@ -29,7 +31,7 @@
     .. container:: code-markup
 
         ``wait()``
-            Метод wait() бесконечно ждет другой поток, пока не будет вызван метод notify() или notifyAll() на объекте. Другие две вариации метода wait() ставят текущий поток в ожидание на определенное время. По истечении этого времени поток просыпается и продолжает работу.
+            Метод ``wait()`` бесконечно ждет другой поток, пока не будет вызван метод ``notify()`` или ``notifyAll()`` на объекте. Другие две вариации метода ``wait()`` ставят текущий поток в ожидание на определенное время. По истечении этого времени поток просыпается и продолжает работу.
 
         ``notify()``
             Пробуждает только один поток, после чего этот поток начинает выполнение. Если объект ожидают несколько потоков, то метод ``notify()`` разбудит только один из них. Выбор потока зависит от системной реализации управления потоками.
@@ -59,8 +61,6 @@
 
         void notifier() {
 
-            synchronized (monitor) {
-                waitCondition = false;
-                monitor.notify();
-            }
+            waitCondition = false;
+            monitor.notify();
         }

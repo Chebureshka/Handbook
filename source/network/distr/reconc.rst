@@ -2,9 +2,14 @@
 
 Реконсиляция
 *********************
+.. container:: left-col
 
+    |br|
 
-Links 
-=====
+.. container:: right-col
 
-https://habr.com/ru/post/428443/
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        https://habr.com/ru/post/428443/

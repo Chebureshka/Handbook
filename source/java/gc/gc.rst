@@ -3,19 +3,24 @@
 GC
 ##################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+.. container:: left-col
 
-   memory.rst
-   strategies.rst
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
+
+      memory.rst
+      strategies.rst
 
 
-Links
-********************************
+.. container:: right-col
 
-`Дюк, вынеси мусор! (Хабр) <https://habr.com/ru/post/269621/>`_
+    .. container:: links-block
 
-https://www.ibm.com/developerworks/ru/library/j-jtp10283/
+        .. rubric:: Ссылки:
 
-https://www.ibm.com/developerworks/ru/library/j-jtp11253/index.html
+        `Дюк, вынеси мусор! (Хабр) <https://habr.com/ru/post/269621/>`_
+
+        https://www.ibm.com/developerworks/ru/library/j-jtp10283/
+         
+        https://www.ibm.com/developerworks/ru/library/j-jtp11253/index.html

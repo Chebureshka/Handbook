@@ -2,110 +2,131 @@
 
 JUnit
 *********
-Фреймворк автоматического тестирования
+.. container:: left-col
 
-Лежит в основе TDD (Test-Driven Development) и входит в семейство фрейморков для тестирования xUnit.
+    Фреймворк автоматического тестирования
 
-Тестовый случай (Test Case) в юнит тестировании – это часть кода, которая проверяет, что другая часть кода  (в частности – метод) работает в соответствии с определёнными требованиями.
-Тесты могут быть организованы  в связки тестов (test suites).
+    Лежит в основе TDD (Test-Driven Development) и входит в семейство фрейморков для тестирования xUnit.
+
+    Тестовый случай (Test Case) в юнит тестировании – это часть кода, которая проверяет, что другая часть кода  (в частности – метод) работает в соответствии с определёнными требованиями.
+    Тесты могут быть организованы  в связки тестов (test suites).
+
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Тестирование в Java. JUnit4 <https://habr.com/ru/post/120101/>`_
+
+        `JUnit 5 User Guide <https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations>`_
+
 
 Аннотации
 =========
+.. container:: left-col
 
-@Before 
-    Обозначает методы, которые будут вызваны до исполнения теста, методы должны быть ``public void``
+    .. container:: code-markup
 
-@BeforeClass (@BeforeAll JUnit5)
-    Обозначает методы, которые будут вызваны до создания экземпляра тест-класса, методы должны быть ``public static void``
+        ``@Before``
+            Обозначает методы, которые будут вызваны до исполнения теста, методы должны быть ``public void``
 
-@After 
-    Обозначает методы, которые будут вызваны после выполнения теста, методы должны быть ``public void``
+        ``@BeforeClass`` (``@BeforeAll`` JUnit5)
+            Обозначает методы, которые будут вызваны до создания экземпляра тест-класса, методы должны быть ``public static void``
 
-@AfterClass (@AfterAll JUnit5)
-    Связана по смыслу с ``@BeforeClass``, но выполняет методы после теста, как и в случае с ``@BeforeClass``, методы должны быть ``public static void``.
+        ``@After``
+            Обозначает методы, которые будут вызваны после выполнения теста, методы должны быть ``public void``
 
-@Test 
-    Обозначает тестовые методы. Как и ранее, эти методы должны быть ``public void``. Здесь размещаются сами проверки. 
-    Кроме того, у данной аннотации есть два параметра, ``expected`` — задает ожидаемое исключение и ``timeout`` — задает время, по истечению которого тест считается провалившимся.
+        ``@AfterClass`` (``@AfterAll`` JUnit5)
+            Связана по смыслу с ``@BeforeClass``, но выполняет методы после теста, как и в случае с ``@BeforeClass``, методы должны быть ``public static void``.
 
-@Ignore (@Disabled JUnit5)
-    Если какой-либо тест по какой-либо серьезной причине нужно отключить(например, этот тест постоянно валится, но его исправление отложено до светлого будущего)
-    Также, если поместить эту аннотацию на класс, то все тесты в этом классе будут отключены.
+        ``@Test`` 
+            Обозначает тестовые методы. Как и ранее, эти методы должны быть ``public void``. Здесь размещаются сами проверки. 
+            Кроме того, у данной аннотации есть два параметра, ``expected`` — задает ожидаемое исключение и ``timeout`` — задает время, по истечению которого тест считается провалившимся.
+
+        ``@Ignore`` (``@Disabled`` JUnit5)
+            Если какой-либо тест по какой-либо серьезной причине нужно отключить(например, этот тест постоянно валится, но его исправление отложено до светлого будущего)
+            Также, если поместить эту аннотацию на класс, то все тесты в этом классе будут отключены.
 
 
 JUnit4
 -------
+.. container:: left-col
 
-@Rule
-    Правила это некое подобие утилит для тестов, которые добавляют функционал до и после выполнения теста.
+    .. container:: code-markup
 
-@RunWith(Suite.class)
-    Класс, указанный в аннотации должен наследоваться от Runner.
+        ``@Rule``
+            Правила это некое подобие утилит для тестов, которые добавляют функционал до и после выполнения теста.
 
-    JUnit4 — запускалка по умолчанию, предназначена для запуска JUnit 4 тестов.
+        ``@RunWith(Suite.class)``
+            Класс, указанный в аннотации должен наследоваться от Runner.
 
-    Suite 
-        Передается класс со статическим методом ``suite`` возвращающим тест(последовательность всех тестов).
+            JUnit4 — запускалка по умолчанию, предназначена для запуска JUnit 4 тестов.
 
-        Для настройки запускаемых тестов используется аннотация ``@SuiteClasses``.
+            Suite 
+                Передается класс со статическим методом ``suite`` возвращающим тест(последовательность всех тестов).
 
-        .. code-block:: java
+                Для настройки запускаемых тестов используется аннотация ``@SuiteClasses``.
 
-            @Suite.SuiteClasses( { OtherJUnit4Test.class, StringUtilsJUnit4Test.class })
-            @RunWith(Suite.class)
-            public class JUnit4TestSuite {}
+                .. code-block:: java
 
-    Parameterized 
-        Запускалка, позволяет писать параметризированные тесты.
+                    @Suite.SuiteClasses( { OtherJUnit4Test.class, StringUtilsJUnit4Test.class })
+                    @RunWith(Suite.class)
+                    public class JUnit4TestSuite {}
 
-        Для этого в тест-классе объявляется статический метод возвращающий список данных, которые затем будут использованы в качестве аргументов конструктора класса через ``@Parameterized.Parameters``.
-            
-            
-    Theories 
-        Чем-то схожа с предыдущей, но параметризирует тестовый метод, а не конструктор.
+            Parameterized 
+                Запускалка, позволяет писать параметризированные тесты.
 
-        Данные помечаются с помощью ``@DataPoints`` и ``@DataPoint``, тестовый метод — с помощью ``@Theory``.
+                Для этого в тест-классе объявляется статический метод возвращающий список данных, которые затем будут использованы в качестве аргументов конструктора класса через ``@Parameterized.Parameters``.
 
-        .. code-block:: java
 
-            @RunWith(Theories.class)
-            public class StringUtilsJUnit4TheoryTest extends Assert {
-        
-                @DataPoints
-                public static Object[][] isEmptyData = new Object[][] { ... }
-            
-                @DataPoint
-                public static Object[] nullData = new Object[] { null, true }
-            
-                @Theory
-                public void testEmpty(final Object... testData) { ... }
-            }
+            Theories 
+                Чем-то схожа с предыдущей, но параметризирует тестовый метод, а не конструктор.
 
-    Category
-        Попытка организовать тесты в категории(группы). Настраиваются запускаемые категории тестов в сюите.
+                Данные помечаются с помощью ``@DataPoints`` и ``@DataPoint``, тестовый метод — с помощью ``@Theory``.
 
-        .. code-block:: java
-    
-            public class StringUtilsJUnit4CategoriesTest extends Assert {
-                @Category(Unit.class)
-                @Test
-                public void testIsEmpty() {}
-            }
-    
-            @RunWith(Categories.class)
-            @Categories.IncludeCategory(Unit.class)
-            @Suite.SuiteClasses( { OtherJUnit4Test.class, StringUtilsJUnit4CategoriesTest.class })
-            public class JUnit4TestSuite {}
+                .. code-block:: java
+
+                    @RunWith(Theories.class)
+                    public class StringUtilsJUnit4TheoryTest extends Assert {
+
+                        @DataPoints
+                        public static Object[][] isEmptyData = new Object[][] { ... }
+
+                        @DataPoint
+                        public static Object[] nullData = new Object[] { null, true }
+
+                        @Theory
+                        public void testEmpty(final Object... testData) { ... }
+                    }
+
+            Category
+                Попытка организовать тесты в категории(группы). Настраиваются запускаемые категории тестов в сюите.
+
+                .. code-block:: java
+
+                    public class StringUtilsJUnit4CategoriesTest extends Assert {
+                        @Category(Unit.class)
+                        @Test
+                        public void testIsEmpty() {}
+                    }
+
+                    @RunWith(Categories.class)
+                    @Categories.IncludeCategory(Unit.class)
+                    @Suite.SuiteClasses( { OtherJUnit4Test.class, StringUtilsJUnit4CategoriesTest.class })
+                    public class JUnit4TestSuite {}
 
 
 JUnit5
 ------
+.. container:: left-col
 
-.. todo:: TODO  https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations
+    |br|
 
-Links
-=======
+.. container:: right-col
 
-`Тестирование в Java. JUnit4 <https://habr.com/ru/post/120101/>`_
+    .. container:: links-block
 
-`JUnit 5 User Guide <https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations>`_
+        .. rubric:: Ссылки:
+
+        `JUnit 5 Annotations <https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations>`_

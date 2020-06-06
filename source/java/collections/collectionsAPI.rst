@@ -2,73 +2,86 @@
 
 Collections 
 ********************************
+.. container:: left-col
 
-sort 
-    Делегирует вызов интерфейсу List, и далее массиву (при реализации по умолчанию)
+    .. container:: code-markup
 
-reverse / rotate 
-    Переставляет элементы в переданном List
+        ``sort`` 
+            Делегирует вызов интерфейсу List, и далее массиву (при реализации по умолчанию)
 
-binarySearch 
-    Поиск элемента
+        ``reverse`` / ``rotate`` 
+            Переставляет элементы в переданном List
 
-shuffle 
-    Случайное пересталвение всех лементов
+        ``binarySearch`` 
+            Поиск элемента
 
-swap 
-    Перестановка двух элементов
+        ``shuffle`` 
+            Случайное пересталвение всех лементов
 
-copy 
-    Копирует элементы из одного List в другой List
+        ``swap`` 
+            Перестановка двух элементов
 
-min/max 
-    Характерная свертка
+        ``copy`` 
+            Копирует элементы из одного List в другой List
 
-replaceAll 
-    Заменить все вхождения переданного элемента
+        ``min``/``max`` 
+            Характерная свертка
 
-indexOfSubList 
-    Индекс из первого массива, начиная с которого полностью повторяется второй
+        ``replaceAll`` 
+            Заменить все вхождения переданного элемента
 
-disjoint 
-    Истина, если нет общих элементов в коллекции 
+        ``indexOfSubList`` 
+            Индекс из первого массива, начиная с которого полностью повторяется второй
 
-addAll 
-    Добавить указанные элементы в коллекцию
+        ``disjoint`` 
+            Истина, если нет общих элементов в коллекции 
 
-reverseOrder 
-    Компоратор, сравнивающий Comparable элементы, в иным результатом
+        ``addAll`` 
+            Добавить указанные элементы в коллекцию
+
+        ``reverseOrder`` 
+            Компоратор, сравнивающий Comparable элементы, в иным результатом
 
 
 Создание специальных коллекций
 ==============================
+.. container:: left-col
 
-singleton 
-    Возвращает иммутабельное множество с единственным элементом (SingletonSet)
+    .. container:: code-markup
 
-singletonList / singletonMap
-    Возвращает иммутабельную коллекцию с единственным элементом
+        ``singleton`` 
+            Возвращает иммутабельное множество с единственным элементом (SingletonSet)
 
-nCopies 
-    Возвращает иммутабельный List из указанного количества переданных элементов
+        ``singletonList`` / ``singletonMap``
+            Возвращает иммутабельную коллекцию с единственным элементом
+
+        ``nCopies`` 
+            Возвращает иммутабельный List из указанного количества переданных элементов
 
 
 
-emptyIterator / emptyListIterator 
-    Возвращает синглтон пустого итератора
+        ``emptyIterator`` / ``emptyListIterator`` 
+            Возвращает синглтон пустого итератора
 
-emptySet / emptySortedSet / emptyNavigableSet / emptyList / emptyMap / emptySortedMap / emptyNavigableMap
-	Возвращает синглтон пустой коллекции
+        ``emptySet`` / ``emptySortedSet`` / ``emptyNavigableSet`` / ``emptyList`` / ``emptyMap`` / ``emptySortedMap`` / ``emptyNavigableMap``
+        	Возвращает синглтон пустой коллекции
 
 
 Декарирование коллекций
 -----------------------
+.. container:: left-col
 
-unmodifiableCollection / unmodifiableSet / unmodifiableSortedSet / unmodifiableNavigableSet / unmodifiableList / unmodifiableMap / unmodifiableSortedMap / unmodifiableNavigableMap
-	Декарирует коллекцию, как неизменяемою
+    .. container:: code-markup
 
-synchronizedCollection / synchronizedSet / synchronizedSortedSet / synchronizedNavigableSet / synchronizedList / synchronizedMap / synchronizedSortedMap / synchronizedNavigableMap
-	Декарирует коллекцию, как синхронизированную
+        ``unmodifiableCollection`` / ``unmodifiableSet`` / ``unmodifiableSortedSet`` / ``unmodifiableNavigableSet`` / ``unmodifiableList`` / ``unmodifiableMap`` / ``unmodifiableSortedMap`` / ``unmodifiableNavigableMap``
+        	Декарирует коллекцию, как неизменяемою
 
-checkedCollection / checkedQueue / checkedSet / checkedNavigableSet / checkedList / checkedMap / checkedSortedMap / checkedNavigableMap
-	Декарирует переданную коллекцию, как коллекцию, в которую можно добавлять элементы строго определенного типа
+        ``synchronizedCollection`` / ``synchronizedSet`` / ``synchronizedSortedSet`` / ``synchronizedNavigableSet`` / ``synchronizedList`` / ``synchronizedMap`` / ``synchronizedSortedMap`` / ``synchronizedNavigableMap``
+        	Декарирует коллекцию, как синхронизированную
+
+        ``checkedCollection`` / ``checkedQueue`` / ``checkedSet`` / ``checkedNavigableSet`` / ``checkedList`` / ``checkedMap`` / ``checkedSortedMap`` / ``checkedNavigableMap``
+        	Декарирует переданную коллекцию, как коллекцию, в которую можно добавлять элементы строго определенного типа
+
+.. container:: right-col
+
+    |br|

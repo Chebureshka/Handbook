@@ -2,13 +2,17 @@
 
 Логирование
 ############
+.. container:: left-col
 
-.. code-block:: java
+    .. code-block:: java
 
-    private static final Logger logger = LogManager.getLogger(Class<?> cls);
+        private static final Logger logger = LogManager.getLogger(Class<?> cls);
 
 
-Links
-*******
+.. container:: right-col
 
-https://habr.com/ru/post/130195/
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        https://habr.com/ru/post/130195/
