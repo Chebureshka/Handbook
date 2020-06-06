@@ -38,10 +38,12 @@ extensions = [
 'sphinx.ext.todo',
 'sphinx.ext.intersphinx', # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 'sphinxcontrib.contentui',
+'sphinx_copybutton',
+'sphinxcontrib.images', # https://sphinxcontrib-images.readthedocs.io/en/latest/
 
-#'sphinx.ext.graphviz',  # https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html
+'sphinx.ext.graphviz',  # https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html
 #'sphinx.ext.imgconverter', # https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html
-#'sphinx.ext.inheritance_diagram', # https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html
+'sphinx.ext.inheritance_diagram', # https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html
 
 ]
 

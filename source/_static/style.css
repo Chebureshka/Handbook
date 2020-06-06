@@ -13,9 +13,18 @@
 }
 
 .code-markup > dl > dd  {
-  border-left: 3px solid rgba(215, 219, 221, 1);
+  border-left: 2px solid rgba(215, 219, 221, 1);
   padding-left: 9px;
 }
+
+.code-markup > dl > dt {
+  background: none !important;
+
+  border: solid 1px #e1e4e5 !important;
+
+}
+
+
 
 
 .green-quote {
@@ -158,4 +167,54 @@
   border-top: 0px;
   border-bottom: 0px;
   border-right: 0px;
+}
+
+
+
+.remark-block {
+  border-left: 6px solid rgba(215, 219, 221 , 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.defs-block > dl > dt {
+  color: #2f3d46 !important;
+  background: none !important;
+
+  border-top: solid 3px rgba(46, 204, 113 , .15) !important;
+
+}
+
+
+.defs-block {
+  border-left: 5px solid rgba(46, 204, 113, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 10px;
+}
+
+.links-block {
+  border-left: 3px solid rgba(52, 152, 219, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+.methods-block {
+  border-left: 3px solid rgba(52, 73, 94, 1);
+  background-color: rgba(170, 183, 184, .15);
+  padding-left: 9px;
+}
+
+
+
+
+
+div.leftside {
+  width: 43%;
+  padding: 0px 3px 0px 0px;
+  float: left;
+}
+
+div.rightside {
+  margin-left: 45%;
+  /* float: right; */
 }
