@@ -3,18 +3,22 @@
 Паттерны проектирования (ООП) 
 ##############################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Содержание
+.. container:: left-col
 
-   creational.rst
-   structural.rst
-   behavioral.rst
+   .. toctree::
+      :maxdepth: 2
+      :caption: Содержание
+   
+      creational.rst
+      structural.rst
+      behavioral.rst
 
+.. container:: right-col
 
-Links
-*******
+    .. container:: links-block
 
-`Википедия <https://ru.wikipedia.org/wiki/Design_Patterns>`_
+        .. rubric:: Ссылки:
 
-` Каталог паттернов проектирования <https://refactoring.guru/ru/design-patterns/catalog>`_
+        `Википедия <https://ru.wikipedia.org/wiki/Design_Patterns>`_
+
+        `Каталог паттернов проектирования <https://refactoring.guru/ru/design-patterns/catalog>`_
