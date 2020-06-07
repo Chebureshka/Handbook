@@ -33,45 +33,70 @@
 
       `Шпаргалки Java программиста 9: Java SE <https://habr.com/ru/post/314386/>`_
 
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Java Frameworks
+   .. toctree::
+      :maxdepth: 1
+      :caption: Java Frameworks
 
-   frameworks/akka/akka.rst
-   frameworks/spark/spark.rst
+      frameworks/akka/akka.rst
+      frameworks/spark/spark.rst
    
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Базы данных 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Базы данных 
 
-   db/redis/redis.rst
-   db/sql/sql.rst
+      db/redis/redis.rst
+      db/sql/sql.rst
 
+.. container:: left-col
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Network 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Network 
 
-   network/distr/distr.rst
-   network/transactions/transactions.rst
+      network/distr/distr.rst
+      network/transactions/transactions.rst
 
+.. container:: left-col
 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Software Design 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Design 
+      design/patterns/patterns.rst
+      design/principles/principles.rst
+      design/reactive/reactive.rst
 
-   design/patterns/patterns.rst
-   design/principles/principles.rst
-   design/reactive/reactive.rst
+.. container:: left-col
 
+   .. toctree::
+      :maxdepth: 1
+      :caption: Tools 
 
+      tools/git/git.rst
+      tools/docker/docker.rst
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Tools 
+.. container:: left-col
 
-   tools/git/git.rst
-   tools/docker/docker.rst
+   .. toctree::
+      :maxdepth: 1
+      :caption: Алгоритмы и структуры данных 
+
+      alg/sorts/sorts.rst
+      alg/data structure/data structure.rst
+      alg/asymptotics/asymptotics.rst
+
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Ifmo: Алгоритмы и структуры данных <http://neerc.ifmo.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%B8_%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85>`_
+
+        `Ifmo: Структуры данных <http://neerc.ifmo.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85>`_
+
+        `Знай сложности алгоритмов <https://habr.com/ru/post/188010/>`_

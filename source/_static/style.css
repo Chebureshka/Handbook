@@ -204,6 +204,14 @@
   padding-left: 9px;
 }
 
+.example-block {
+
+  border-left: 3px solid rgba(52, 73, 94, .3);
+  background-color: rgba(170, 183, 184, 0.1);
+  padding-left: 9px;
+
+}
+
 
 
 
