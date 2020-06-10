@@ -33,11 +33,11 @@ release = '2.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 
-"sphinx_rtd_theme",
+"sphinx_rtd_theme", # https://sphinx-rtd-theme.readthedocs.io/en/latest/demo/lists_tables.html?highlight=hlist#hlists
 "sphinx.ext.autodoc",
 'sphinx.ext.todo',
 'sphinx.ext.intersphinx', # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
-'sphinxcontrib.contentui',
+'sphinxcontrib.contentui', # https://sphinxcontrib-contentui.readthedocs.io/en/latest/toggle.html
 'sphinx_copybutton',
 'sphinxcontrib.images', # https://sphinxcontrib-images.readthedocs.io/en/latest/
 
