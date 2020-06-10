@@ -41,6 +41,7 @@
 
       frameworks/akka/akka.rst
       frameworks/spark/spark.rst
+      frameworks/spring/spring.rst
    
 .. container:: left-col
 

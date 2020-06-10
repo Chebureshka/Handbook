@@ -24,3 +24,12 @@
        :caption: Содержание
     
        acid.rst
+
+
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+        
+        `Принципы работы СУБД. MVCC <https://habr.com/ru/post/208400/>`_

@@ -29,3 +29,5 @@ Java Concurrency
       `Многопоточный пакет util.concurrent <http://java-online.ru/concurrent.xhtml>`_
 
       `Лекции (EPUM) <https://mega.nz/folder/bc9BSJ5a#fz-L6oRGtQGYCRH0XIuukw>`_
+
+      `Threading in Java <https://medium.com/@bkodirov/threading-in-java-55ec2e184fe7>`_

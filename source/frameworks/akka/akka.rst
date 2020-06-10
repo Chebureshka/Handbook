@@ -22,6 +22,8 @@ Akka
         
         `Akka HTTP <https://doc.akka.io/docs/akka-http/current/introduction.html>`_
 
+        `Akka. О чем все эти Акторы и зачем вам Akka? <https://medium.com/@maximsidorov/akka-%D0%BE-%D1%87%D0%B5%D0%BC-%D0%B2%D1%81%D0%B5-%D1%8D%D1%82%D0%B8-%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D1%8B-%D0%B8-%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%B2%D0%B0%D0%BC-akka-cad22a30747>`_
+
 
 Актор
 ******
