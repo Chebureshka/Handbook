@@ -16,6 +16,7 @@ Java Concurrency
       jmm.rst
       reduce.rst
       dcl.rst
+      threadlocal.rst
 
 .. container:: right-col
 
