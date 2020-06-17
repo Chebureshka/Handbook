@@ -26,6 +26,30 @@
 
 
 
+.grid-markup > dl > dd  {
+  padding-left: 3px;
+}
+
+.grid-markup > dl > dt {
+  background: none !important;
+
+  border: none !important;
+
+}
+
+
+
+
+
+
+
+
+.links-block > p:not(:first-child):not(:last-child) {
+  margin-bottom: 5px !important;
+}
+
+
+
 
 .green-quote {
   border-left: 6px solid rgba(46, 204, 113, 1);
@@ -223,12 +247,18 @@
 
 
 div.leftside {
-  width: 43%;
-  padding: 0px 3px 0px 0px;
+  width: 49%;
+  padding-left: 5px;
+  float: left;
+}
+
+div.leftsidem {
+  width: 75%;
   float: left;
 }
 
 div.rightside {
-  margin-left: 45%;
-  /* float: right; */
+  margin-left: 51%;
+  padding-right: 5px;
+  /*float: right;*/
 }
