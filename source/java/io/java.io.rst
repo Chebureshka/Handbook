@@ -8,10 +8,13 @@ java.io
 
 .. container:: right-col
 
-    |br|
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Package java.io <https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html>`_
 
 .. contents:: Иерархия:
-
 
 
 InputStream
@@ -66,8 +69,6 @@ ByteArrayInputStream
 ------------------------
 .. container:: left-col
 
-
-
     Чтение из указанного буфера
 
 .. container:: right-col
@@ -79,8 +80,6 @@ ByteArrayInputStream
 SequenceInputStream
 -----------------------
 .. container:: left-col
-
-
 
     Объединяет потоки ввода последовательно, т.е. после прочтения s1 последует чтение из s2.
 
@@ -95,9 +94,6 @@ SequenceInputStream
 ObjectInputStream
 --------------------
 .. container:: left-col
-
-
-
 
     Чтение ранее сериализованных данных из потока. В конструкторе он принимает ссылку на поток ввода.
 
@@ -248,7 +244,7 @@ PrintStream
 ^^^^^^^^^^^
 .. container:: left-col
 
-    Используется для вывода на консоль
+    Используется для вывода на консоль, файл и тд.
 
 
 

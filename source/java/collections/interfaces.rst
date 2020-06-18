@@ -7,47 +7,47 @@
 
   * Iterable
 
-    * `Collection`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html>`__ 
+    * `Collection`_
 
       * **AbstractCollection**
 
-      * `List`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/List.html>`__
+      * `List`_
 
         * **AbstractList**
 
           * **AbstractSequentialList**
 
-        * `Queue`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html>`__
+        * `Queue`_
 
           * **AbstractQueue**
 
-          * `BlockingQueue`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html>`__
+          * `BlockingQueue`_
 
-            * `TransferQueue`_ `📖 <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/TransferQueue.html>`__
+            * `TransferQueue`_
 
-          * `Deque`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html>`__
+          * `Deque`_
 
-            * `BlockingDeque`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html>`__
+            * `BlockingDeque`_
 
-      * `Set`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>`__
+      * `Set`_ 
 
         * **AbstractSet**
 
-        * `SortedSet`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html>`__
+        * `SortedSet`_
 
-          * `NavigableSet`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableSet.html>`__
+          * `NavigableSet`_ 
 
-  * `Map`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>`__
+  * `Map`_
 
     * **AbstractMap**
 
-    * `SortedMap`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html>`__
+    * `SortedMap`_
 
-      * `NavigableMap`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html>`__
+      * `NavigableMap`_
 
-    * `ConcurrentMap`_ `📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html>`__
+    * `ConcurrentMap`_ 
 
-      * `ConcurrentNavigableMap`_ `📖 <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentNavigableMap.html>`__
+      * `ConcurrentNavigableMap`_ 
 
 
 
@@ -66,7 +66,7 @@ Collection
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html>`__ 
+        `Collection (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html>`__ 
 
     .. container:: remark-block
 
@@ -89,13 +89,19 @@ List
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/List.html>`__ 
+        `List (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/List.html>`__ 
 
     .. container:: remark-block
 
       .. rubric:: Методы:
 
       ``indexOf``, ``get``, ``add``/``remove``/``set(index, )``, ``sort``, ``sublist``
+
+    .. container:: remark-block
+
+      В Java 9/10 добавлены статические методы для создания иммутабелных экземпляров List: 
+
+      ``List.of(...)``, ``List.copyOf(...)``
 
 
 Queue
@@ -115,7 +121,7 @@ Queue
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html>`__ 
+        `Queue (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html>`__ 
 
 BlockingQueue
 -----------------------
@@ -136,7 +142,7 @@ BlockingQueue
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html>`__ 
+        `BlockingQueue (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html>`__ 
 
         `Блокирующие очереди пакета concurrent <http://java-online.ru/concurrent-queue-block.xhtml>`__ 
 
@@ -152,7 +158,7 @@ TransferQueue
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/TransferQueue.html>`__ 
+        `TransferQueue (docs.oracle) <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/TransferQueue.html>`__ 
 
 Deque
 -----------------------
@@ -166,7 +172,7 @@ Deque
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html>`__ 
+        `Deque (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html>`__ 
 
 BlockingDeque
 -----------------------
@@ -180,7 +186,7 @@ BlockingDeque
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html>`__ 
+        `BlockingDeque (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html>`__ 
 
 Set
 -----------------------
@@ -194,7 +200,13 @@ Set
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>`__ 
+        `Set (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>`__ 
+
+    .. container:: remark-block
+
+      В Java 9/10 добавлены статические методы для создания иммутабелных экземпляров Set: 
+
+      ``Set.of(...)``, ``Set.copyOf(...)``
 
 SortedSet
 -----------------------
@@ -208,7 +220,7 @@ SortedSet
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html>`__ 
+        `SortedSet (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html>`__ 
 
 NavigableSet
 -----------------------
@@ -222,7 +234,7 @@ NavigableSet
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableSet.html>`__ 
+        `NavigableSet (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableSet.html>`__ 
 
 Map
 =======================
@@ -238,13 +250,19 @@ Map
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>`__ 
+        `Map (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>`__ 
 
     .. container:: remark-block
 
       .. rubric:: Методы:
 
       ``put``, ``putAll``, ``remove``, ``keySet``, ``entrySet``, ``clear``, ``containsValue``, ``containsKey``, ``get``, ``replace``, ``values``
+
+    .. container:: remark-block
+
+      В Java 9/10 добавлены статические методы для создания иммутабелных экземпляров Map, Entry: 
+
+      ``Map.of(...)``, ``Map.copyOf(...)``, ``Map.ofEnties(...)``, ``Map.entry(...)``
 
 SortedMap
 -----------------------
@@ -258,7 +276,7 @@ SortedMap
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html>`__ 
+        `SortedMap (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html>`__ 
 
 NavigableMap
 -----------------------
@@ -274,7 +292,7 @@ NavigableMap
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html>`__ 
+        `NavigableMap (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html>`__ 
 
 ConcurrentMap
 -----------------------
@@ -290,7 +308,7 @@ ConcurrentMap
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html>`__ 
+        `ConcurrentMap (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html>`__ 
 
 ConcurrentNavigableMap
 -----------------------
@@ -309,7 +327,7 @@ ConcurrentNavigableMap
 
         .. rubric:: Ссылки:
 
-        `Документация 📖 <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentNavigableMap.html>`__ 
+        `ConcurrentNavigableMap (docs.oracle) <https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentNavigableMap.html>`__ 
 
 
 

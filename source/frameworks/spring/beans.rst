@@ -90,9 +90,6 @@ BeanDefinition
                     websocket
                         Scopes a single bean definition to the lifecycle of a *WebSocket*.
 
-        Constructor arguments & Properties
-            Ссылки на другие bean-компоненты, коллекции, примитивные значения, которые необходимы для работы. These references are also called collaborators or dependencies.
-
 .. container:: right-col
 
     .. container:: links-block
@@ -100,6 +97,14 @@ BeanDefinition
         .. rubric:: Ссылки:
 
         `Spring - Bean Scopes <https://www.tutorialspoint.com/spring/spring_bean_scopes.htm>`_
+
+.. container:: left-col
+
+    .. container:: code-markup
+
+        Constructor arguments & Properties
+            Ссылки на другие bean-компоненты, коллекции, примитивные значения, которые необходимы для работы. These references are also called collaborators or dependencies.
+
 
 .. container:: left-col
 
