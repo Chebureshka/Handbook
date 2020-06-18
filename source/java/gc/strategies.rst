@@ -114,7 +114,15 @@ Parallel (параллельный) GC
 
 .. container:: right-col
 
-    .. rubric:: -XX:+UseParallelGC
+    **-XX:+UseParallelGC**
+
+        Use parallel garbage collection for Young generation.
+
+    **-XX:+UseParallelOldGC**
+
+        Use parallel garbage collection for the full collections. 
+
+        Enabling this option automatically sets -XX:+UseParallelGC.
 
     .. container:: remark-block
 
@@ -151,6 +159,10 @@ Concurrent Mark Sweep (CMS) GC
 .. container:: right-col
 
     .. rubric:: -XX:+UseConcMarkSweepGC
+
+    .. container:: remark-block
+
+        Удален в (Java 14)
 
 Major (Старшая) GC
 ---------------------
@@ -286,3 +298,91 @@ Marking cycle
 
     Расплатой за достоинства G1 являются ресурсы процессора, которые он использует для выполнения достаточно большой части своей работы параллельно с основной программой. 
     В результате страдает пропускная способность приложения. Целевым значением пропускной способности по умолчанию для G1 является 90%. Для Parallel GC, например, это значение равно 99%
+
+
+
+Epsilon GC (Java 11)
+===========================================
+.. container:: left-col
+
+    Epsilon Garbage Collector на самом деле не собирает мусор. По сути он не делает ничего. 
+    
+    Предполагается использовать для замеров влияния сборщиков мусора на выполнение программы.
+
+.. container:: right-col
+
+    .. rubric:: -XX:+UseEpsilonGC
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `GC Epsilon <https://habr.com/ru/post/321856/>`_
+
+
+ZGC 
+==============================
+.. container:: left-col
+
+    ZGC нацелен обеспечить как можно более короткие этапы "*stop-the-world*". Это достигается таким образом, что продолжительность этих пауз не увеличивается с размером кучи.
+
+    Эти характеристики делают ZGC подходящим для серверных приложений, где распространены большие кучи и требуется быстрое время отклика приложений.
+
+    To achieve its goals ZGC uses two techniques new to Hotspot Garbage Collectors: **coloured pointers** and **load barriers**.
+
+.. container:: right-col
+
+    .. rubric:: -XX:+UseZGC
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `ZGC (baeldung) <https://www.baeldung.com/jvm-zgc-garbage-collector>`_
+
+        `ZGC (opsian) <https://www.opsian.com/blog/javas-new-zgc-is-very-exciting/>`_
+
+        `JEP 377 <https://openjdk.java.net/jeps/377>`_
+
+    .. container:: remark-block
+
+        In production from Java 14
+
+Pointer colouring
+----------------------
+.. container:: left-col
+
+    Pointer colouring - это метод, который хранит информацию в самих указателях (ссылках).
+
+    Это возможно, потому что на 64-битных платформах (*ZGC - только 64-битная*) указатель может адресовать значительно больше памяти, 
+    чем реально может иметь система, и поэтому можно использовать некоторые другие биты для сохранения состояния.
+
+    ZGC ограничивает себя кучами *4 Тб*, для которых требуется *42 бита*, оставляя *22 бита* возможного состояния, 
+    в котором в настоящее время используются 4 бита: *финализируемый, переназначение, mark0 и mark1*.
+
+    Одна проблема с *Pointer colouring* состоит в том, что он может создать дополнительную работу, когда вам нужно *разыменовать указатель*, потому что вам нужно замаскировать биты информации.
+
+    Some platforms like SPARC have built-in hardware support for pointer masking so it’s not an issue but for x86, the ZGC team use a neat multi-mapping trick.
+
+
+Shenandoah GC
+========================
+.. container:: left-col
+
+    |br|
+
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `Shenandoah на JPoint 2017 <https://dev.cheremin.info/2017/06/shenandoah-jpoint-2017.html>`_
+
+    .. container:: remark-block
+
+        In production from Java 14
+
+    .. raw:: html 
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CnRtbtis79U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
