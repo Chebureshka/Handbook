@@ -9,14 +9,16 @@ Java Concurrency
       :maxdepth: 2
       :caption: Содержание
 
-      basics.rst
       locks.rst
       executors.rst
+      completablefuture.rst
       cas.rst 
       jmm.rst
       reduce.rst
-      dcl.rst
       threadlocal.rst
+      threadlocalrandom.rst
+      dcl.rst
+
 
 .. container:: right-col
 
