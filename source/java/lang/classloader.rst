@@ -8,7 +8,15 @@ ClassLoader
 
 .. container:: right-col
 
-    |br|
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+        
+        `Загрузка классов, ClassLoader <http://java-online.ru/java-classloader.xhtml>`_ 
+
+        `ClassLoader (docs.oracle.com) <https://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html>`_ 
+
+        `ClassLoader (courses.cs.washington.edu) <https://courses.cs.washington.edu/courses/cse341/98au/java/jdk1.2beta4/docs/api/java/lang/ClassLoader.html#definePackage(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.net.URL)>`_
 
 Этапы загрузки классов
 ------------------------
@@ -71,8 +79,9 @@ ClassLoader
     ClassNotFoundException 
         Возникает при динамической загрузке класса во время выполнения программы, когда загрузчики не могут найти требуемый класс ни в кэше, ни по пути нахождения классов.
 
-        Например, при использовании рефлексии ``(Class.forName("..."))``, или же при десериализации объекта с отсутствующим классом.
+        Например, при использовании рефлексии ``Class.forName("...")``, или же при десериализации объекта с отсутствующим классом.
 
     NoClassDefFoundError 
         Возникает в том случае, когда во время компиляции искомый класс был доступен, но не виден во время выполнения программы.
         (Искомое определение класса существовало при компиляции текущего класса, но при исполнении не может быть найдено)
+

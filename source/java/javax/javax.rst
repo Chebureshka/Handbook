@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-Java Specific Objects
+javax
 ######################
 
 .. container:: left-col
@@ -9,11 +9,9 @@ Java Specific Objects
       :maxdepth: 1
       :caption: Содержание
 
-      proxy.rst
-      classloader.rst
-      references.rst
       jmx.rst
+
 
 .. container:: right-col
 
-   |br|
+    |br|

@@ -8,6 +8,13 @@ JMX
 
     Она позволяет управлять внутренним состоянием так называемых MBean-ов, которые по сути являются классами Java, предоставляющими доступ к части своих полей и методов извне.
 
+.. container:: right-col
+
+    .. container:: links-block
+
+        .. rubric:: Ссылки:
+
+        `JMX <https://www.oracle.com/technical-resources/articles/javase/jmx.html>`_
 
 MBean
 =======
