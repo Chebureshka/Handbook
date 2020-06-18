@@ -494,90 +494,6 @@ StampedLock
 
     |br|
 
-
-.. container:: right-col
-
-    .. container:: links-block
-    
-        .. rubric:: Ссылки:
-
-        `StampedLock (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/StampedLock.html>`_
-
-        `StampedLock (>рабочие заметки) <https://dev.cheremin.info/2012/10/stampedlock.html>`_
-
-        `Синхронизация доступа к изменяемым объектам <https://tproger.ru/translations/java8-concurrency-tutorial-2/>`_
-
-    .. container:: remark-block
-
-        Появился в Java 8
-
-    .. toggle-header::
-        :header: Методы
-
-        .. container:: leftside, grid-markup
-
-            Неэксклюзивно захватывает лок на чтение:
-                .. code-block:: java 
-
-                    long readLockInterruptibly();
-
-                    long readLock();
-
-                    long tryReadLock(
-                        long time, TimeUnit unit
-                    );
-
-                    long tryReadLock();
-
-
-            Освобождение лока:
-                .. code-block:: java 
-
-                    void    unlock(long stamp);
-
-                    void    unlockWrite(long stamp);
-                    boolean tryUnlockWrite();
-
-                    void    unlockRead(long stamp);
-                    boolean tryUnlockRead();
-
-        .. container:: rightside, grid-markup
-
-            Эксклюзивно захватывает лок на запись:
-                .. code-block:: java 
-
-                    long writeLockInterruptibly();
-
-                    long writeLock();
-
-                    long tryWriteLock(
-                        long time, TimeUnit unit
-                    );
-
-                    long tryWriteLock();
-
-
-            Проверка состояния лока:
-                .. code-block:: java 
-
-                    boolean isWriteLocked();
-                    boolean isReadLocked();
-
-                    int     getReadLockCount();
-
-
-            Получение ReadWriteLock:
-                .. code-block:: java 
-
-                    Lock asReadLock();
-                    Lock asWriteLock();
-                    ReadWriteLock asReadWriteLock();
-
-    |br|
-
-
-.. container:: left-col
-
     .. rubric:: Оптимистичная блокировка:
 
     Оптимистичная блокировка для чтения, вызываемая с помощью метода ``tryOptimisticRead()``, отличается тем, что она всегда будет возвращать “штамп” не блокируя текущий поток, 
@@ -642,26 +558,6 @@ StampedLock
     .. note::
         Таким образом, при использовании оптимистичных блокировок нужно постоянно следить за их валидностью (проверять её нужно уже после того, как выполнены все необходимые операции).
 
-.. container:: right-col
-
-    .. toggle-header::
-        :header: Методы
-
-        .. container:: leftside, grid-markup
-
-            Оптимистичная блокировка:
-                .. code-block:: java 
-
-                    long tryOptimisticRead();
-
-                    boolean validate(long stamp);
-
-    |br|
-
-
-
-.. container:: left-col
-
     .. rubric:: Преобразование:
 
     Иногда может быть полезным преобразовать блокировку для чтения в блокировку для записи не высвобождая ресурсы. 
@@ -706,27 +602,102 @@ StampedLock
 
 .. container:: right-col
 
-    .. toggle-header::
-        :header: Методы
+    .. container:: links-block
+    
+        .. rubric:: Ссылки:
 
-        .. container:: leftside, grid-markup
+        `StampedLock (docs.oracle) <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/StampedLock.html>`_
 
-            Преобразования:
-                .. code-block:: java 
+        `StampedLock (>рабочие заметки) <https://dev.cheremin.info/2012/10/stampedlock.html>`_
 
-                    long tryConvertToWriteLock(
-                        long stamp
-                    );
+        `Синхронизация доступа к изменяемым объектам <https://tproger.ru/translations/java8-concurrency-tutorial-2/>`_
 
-                    long tryConvertToReadLock(
-                        long stamp
-                    );
+    .. container:: remark-block
 
-                    long tryConvertToOptimisticRead(
-                        long stamp
-                    );
+        Появился в Java 8
 
-    |br|
+    .. container:: remark-block
+
+        .. toggle-header::
+            :header: Методы
+
+            .. container:: leftside, grid-markup
+
+                Неэксклюзивно захватывает лок на чтение:
+                    .. code-block:: java 
+
+                        long readLockInterruptibly();
+
+                        long readLock();
+
+                        long tryReadLock(
+                            long time, TimeUnit unit
+                        );
+
+                        long tryReadLock();
+
+                Проверка состояния лока:
+                    .. code-block:: java 
+
+                        boolean isWriteLocked();
+                        boolean isReadLocked();
+
+                        int     getReadLockCount();
+
+                Преобразования:
+                    .. code-block:: java 
+
+                        long tryConvertToWriteLock(
+                            long stamp
+                        );
+
+                        long tryConvertToReadLock(
+                            long stamp
+                        );
+
+                        long tryConvertToOptimisticRead(
+                            long stamp
+                        );
+
+            .. container:: rightside, grid-markup
+
+                Эксклюзивно захватывает лок на запись:
+                    .. code-block:: java 
+
+                        long writeLockInterruptibly();
+
+                        long writeLock();
+
+                        long tryWriteLock(
+                            long time, TimeUnit unit
+                        );
+
+                        long tryWriteLock();
+
+                Освобождение лока:
+                    .. code-block:: java 
+
+                        void    unlock(long stamp);
+
+                        void    unlockWrite(long stamp);
+                        boolean tryUnlockWrite();
+
+                        void    unlockRead(long stamp);
+                        boolean tryUnlockRead();
+
+                Оптимистичная блокировка:
+                    .. code-block:: java 
+
+                        long tryOptimisticRead();
+
+                        boolean validate(long stamp);
+
+                Получение ReadWriteLock:
+                    .. code-block:: java 
+
+                        Lock asReadLock();
+                        Lock asWriteLock();
+                        ReadWriteLock asReadWriteLock();
 
 Condition
 ----------
