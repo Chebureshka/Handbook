@@ -262,3 +262,30 @@ div.rightside {
   padding-right: 5px;
   /*float: right;*/
 }
+
+
+
+
+.toggle-header > p {
+  color: rgb(71, 158, 192) !important;
+  border-bottom: 1px dotted !important;
+
+}
+
+.toggle-header::after {
+  content: none !important;
+}
+
+.toggle-header::before {
+  color: rgb(119, 191, 219) !important;
+  content: '▷' !important;
+}
+
+.toggle-header.open::before {
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
