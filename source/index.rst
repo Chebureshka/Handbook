@@ -1,5 +1,7 @@
 .. include:: ../README.rst
 
+.. include:: defs.rst
+
 .. container:: left-col
 
    .. toctree::
@@ -18,7 +20,9 @@
       kotlin/coroutines/coroutines.rst
       frameworks/logging/logging.rst
       java/web/web.rst
-      java/specific/specific.rst
+      java/lang/lang.rst
+      java/javax/javax.rst
+      java/bytecode/bytecode.rst
       frameworks/tests/tests.rst
 
 .. container:: right-col
@@ -33,6 +37,18 @@
 
       `Шпаргалки Java программиста 9: Java SE <https://habr.com/ru/post/314386/>`_
 
+      `Блог ">рабочие заметки" <https://dev.cheremin.info/>`_
+
+   .. container:: remark-block
+
+      .. toggle-header::
+         :header: Дополнительные ресурсы
+
+         .. raw:: html
+
+            <iframe width="382" height="215" src="https://www.youtube.com/embed/videoseries?list=PL786bPIlqEjRDXpAKYbzpdTaOYsWyjtCX" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 .. container:: left-col
 
    .. toctree::
@@ -43,6 +59,15 @@
       frameworks/spark/spark.rst
       frameworks/spring/spring.rst
    
+.. container:: right-col
+
+   .. container:: remark-block
+
+      Основным `различим между библиотекой и фреймворком <https://javadevblog.com/v-chem-raznitsa-mezhdu-frejmvorkom-i-bibliotekoj.html>`_ является инверсия управления (фреймворк управляет тем, когда следует вызвать тот или иной пользовательский метод - определяет архитектуру разрабатываемого приложения). 
+      При работе с библиотекой (например, вызов метода), вы контролируете процесс — что и когда вызывать. К тому же библиотека по сути является кодовой базой и используется как часть программы не влияя на архитектуру приложения.
+
+
+
 .. container:: left-col
 
    .. toctree::
