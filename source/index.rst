@@ -85,6 +85,7 @@
 
       network/distr/distr.rst
       network/transactions/transactions.rst
+      network/osi/osi.rst
 
 .. container:: left-col
 

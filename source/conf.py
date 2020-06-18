@@ -16,6 +16,8 @@
 
 import sphinx_rtd_theme
 
+# https://docutils.sourceforge.io/docs/ref/rst/directives.html#class
+# https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#footnote
 
 # -- Project information -----------------------------------------------------
 
