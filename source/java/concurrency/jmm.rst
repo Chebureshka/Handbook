@@ -181,7 +181,12 @@ volatile
       ``a = 1; volatile = 2; read(volatile); read(a)`` 
           Гарантируется Program Order: |br| :math:`setA[X] \Rightarrow setVolatile[X] \Rightarrow showVolatile[X] \Rightarrow showA[X]`
 
+.. container:: right-col
 
+  .. container:: refs-block
+
+    `Out-Of-Order Excecution <https://ru.wikipedia.org/wiki/%D0%92%D0%BD%D0%B5%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D0%BE%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5>`_
+    (Внеочередное исполнение) машинных инструкций — исполнение машинных инструкций не в порядке следования в машинном коде (как было при выполнении инструкций по порядку (англ. in-order execution)), а в порядке готовности к выполнению. Реализуется с целью повышения производительности вычислительных устройств
 
 Правила межпоточного взаимодействия. Happens-before
 ====================================================
