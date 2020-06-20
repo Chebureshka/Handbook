@@ -105,6 +105,7 @@
 
       tools/git/git.rst
       tools/docker/docker.rst
+      tools/idea/idea.rst
 
 .. container:: left-col
 
