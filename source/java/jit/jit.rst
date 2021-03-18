@@ -16,7 +16,7 @@ JIT
         .. rubric:: Ссылки:
 
         `Динамическая компиляция и измерение производительности (IBM) <https://www.ibm.com/developerworks/ru/library/j-jtp12214/index.html>`_
-
+        
 HotSpot
 *********
 .. container:: left-col

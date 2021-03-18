@@ -9,12 +9,13 @@
       :maxdepth: 2
       :caption: Содержание
 
+      basics.rst
       replication.rst
       cap.rst
       shard.rst
       reconc.rst
-      mvcc.rst
 
+   :ref:`ParDistrSys`
 
 .. container:: right-col
 

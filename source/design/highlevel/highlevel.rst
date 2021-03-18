@@ -1,18 +1,19 @@
 .. include:: ../../defs.rst
 
-Принципы программирования
-###########################
+Архитектурные шаблоны
+############################
+
 .. container:: left-col
 
    .. toctree::
       :maxdepth: 2
       :caption: Содержание
 
-      solid.rst
-      dry.rst
-      kiss.rst
-      yagni.rst
+      mvc.rst
+
+   :ref:`ArhDistrSys`
+
 
 .. container:: right-col
 
-   |br|
+    |br|

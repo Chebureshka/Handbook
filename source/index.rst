@@ -39,6 +39,8 @@
 
       `Блог ">рабочие заметки" <https://dev.cheremin.info/>`_
 
+      `CSC Программирование на Java, весна 2020 <https://www.youtube.com/playlist?list=PLlb7e2G7aSpRZSRZxANkvpYC82BXUzCTY>`_
+
    .. container:: remark-block
 
       .. toggle-header::
@@ -58,6 +60,7 @@
       frameworks/akka/akka.rst
       frameworks/spark/spark.rst
       frameworks/spring/spring.rst
+      frameworks/hibernate/hibernate.rst
    
 .. container:: right-col
 
@@ -77,6 +80,14 @@
       db/redis/redis.rst
       db/sql/sql.rst
 
+.. container:: right-col
+
+   .. container:: links-block
+   
+      .. rubric:: Ссылки:
+
+      `Как устроены базы данных <https://habr.com/ru/company/oleg-bunin/blog/358984/>`_
+
 .. container:: left-col
 
    .. toctree::
@@ -95,7 +106,8 @@
 
       design/patterns/patterns.rst
       design/principles/principles.rst
-      design/reactive/reactive.rst
+      design/paradigm/paradigm.rst
+      design/highlevel/highlevel.rst
 
 .. container:: left-col
 

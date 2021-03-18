@@ -41,3 +41,5 @@ ACID
         .. rubric:: Ссылки:
 
         https://ru.wikipedia.org/wiki/ACID
+
+        `Durability (database systems) <https://en.wikipedia.org/wiki/Durability_(database_systems)>`_

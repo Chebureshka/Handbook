@@ -1,6 +1,6 @@
 .. include:: ../../defs.rst
 
-Java Basics
+Java Types
 ##################
 
 Контракт equals/hashCode

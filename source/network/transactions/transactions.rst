@@ -24,6 +24,9 @@
        :caption: Содержание
     
        acid.rst
+       messagepersistence.rst
+       idempotence.rst
+       mvcc.rst
 
 
 .. container:: right-col
